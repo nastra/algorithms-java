@@ -1,5 +1,8 @@
 package com.nastra.datastructures;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * This class uses an R-way Trie to implement a symbol table
  *
@@ -34,15 +37,19 @@ public class Trie<T> {
     }
 
     public T get(String key) {
-        return get(root, key, 0);
+        Node<T> node = get(root, key, 0);
+        if (null != node) {
+            return node.value;
+        }
+        return null;
     }
 
-    private T get(Node<T> node, String key, int len) {
+    private Node get(Node<T> node, String key, int len) {
         if (null == node) {
             return null;
         }
         if (len == key.length()) {
-            return node.value;
+            return node;
         }
         char c = key.charAt(len);
         return get(node.next[c], key, len + 1);
@@ -64,5 +71,24 @@ public class Trie<T> {
             count = count + size(node.next[c]);
         }
         return count;
+    }
+
+    public Iterable<String> keysWithPrefix(String prefix) {
+        Queue<String> q = new LinkedList<String>();
+        Node<T> x = get(root, prefix, 0);
+        collect(x, prefix, q);
+        return q;
+    }
+
+    private void collect(Node<T> node, String prefix, Queue<String> q) {
+        if (null == node) {
+            return;
+        }
+        if (null != node.value) {
+            q.add(prefix);
+        }
+        for (char c = 0; c < R; c++) {
+            collect(node.next[c], prefix + c, q);
+        }
     }
 }
