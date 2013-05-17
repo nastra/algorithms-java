@@ -95,4 +95,29 @@ public class Trie<T> {
     public Iterable<String> keys() {
         return keysWithPrefix("");
     }
+
+    public void delete(String key) {
+        root = delete(root, key, 0);
+    }
+
+    private Node<T> delete(Node<T> node, String key, int len) {
+        if (null == node) {
+            return null;
+        }
+        if (len == key.length()) {
+            node.value = null;
+        } else {
+            char c = key.charAt(len);
+            node.next[c] = delete(node.next[c], key, len + 1);
+        }
+        if (null != node.value) {
+            return node;
+        }
+        for (char c = 0; c < R; c++) {
+            if (null != node.next[c]) {
+                return node;
+            }
+        }
+        return null;
+    }
 }
