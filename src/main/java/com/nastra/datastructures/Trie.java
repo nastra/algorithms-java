@@ -91,4 +91,8 @@ public class Trie<T> {
             collect(node.next[c], prefix + c, q);
         }
     }
+
+    public Iterable<String> keys() {
+        return keysWithPrefix("");
+    }
 }
