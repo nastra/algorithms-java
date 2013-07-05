@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * WARNING: Don't make n too large.
+ * <br>Recall that the number of permutations is n! which can be very large, even when n is as small as 20
+ * <br>20! = 2,432,902,008,176,640,000 and 21! is too big to fit into a Java long
  *
  * @author nastra
  */
