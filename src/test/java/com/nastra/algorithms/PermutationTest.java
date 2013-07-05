@@ -1,8 +1,8 @@
 package com.nastra.algorithms;
 
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -15,6 +15,14 @@ public class PermutationTest {
         String input = "dogs";
         List<String> permutations = Permute.permute(input);
         long expectedSize = Factorial.factorial(input.length());
+        Assert.assertTrue(permutations.size() == expectedSize);
+    }
+
+    @Test
+    public void testPermutationsLong() {
+        String input = "cdcdcdcdee";
+        long expectedSize = Factorial.factorial(input.length());
+        List<String> permutations = Permute.permute(input);
         Assert.assertTrue(permutations.size() == expectedSize);
     }
 }

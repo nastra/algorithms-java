@@ -2,9 +2,9 @@ package com.nastra.algorithms;
 
 import java.util.Arrays;
 import java.util.Random;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -15,7 +15,7 @@ public class MergeTest {
     private Random random;
     private Merge merge;
 
-    @Before
+    @BeforeMethod
     public void init() {
         random = new Random();
         merge = new Merge();
@@ -33,6 +33,6 @@ public class MergeTest {
         Assert.assertFalse(merge.isSorted(input));
         Assert.assertTrue(merge.isSorted(sortedInput));
         merge.sort(input);
-        Assert.assertArrayEquals(input, sortedInput);
+        Assert.assertEquals(input, sortedInput);
     }
 }

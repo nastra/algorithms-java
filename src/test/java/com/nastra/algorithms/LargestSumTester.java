@@ -1,7 +1,7 @@
 package com.nastra.algorithms;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -11,7 +11,6 @@ public class LargestSumTester {
 
     @Test
     public void largestSumTester() {
-
         int[] one = {-8, 3, -2, 4, -10};
         int expectedSum = 5;
         int sum = LargestSum.largestSum(one);

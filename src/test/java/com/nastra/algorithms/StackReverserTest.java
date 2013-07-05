@@ -3,8 +3,8 @@ package com.nastra.algorithms;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-import junit.framework.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  *
