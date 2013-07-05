@@ -10,8 +10,13 @@ import java.util.List;
  */
 public class Permute {
 
+    public static List<String> permuteIterative(String input) {
+        return Collections.emptyList();
+    }
+
     /**
-     * Generates all permutations of a given string. This solution runs in time O(n!).
+     * Generates all permutations of a given string. This solution uses recursion and runs in time O(n!). Due to its recursive nature, this solution
+     * is quite memory-inefficient.
      *
      * @param input The input to permute.
      * @return A list of all permutations of the given input.
