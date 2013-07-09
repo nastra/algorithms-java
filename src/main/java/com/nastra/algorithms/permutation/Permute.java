@@ -1,8 +1,12 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.permutation;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * WARNING: Don't make n too large.
@@ -12,6 +16,8 @@ import java.util.List;
  * @author nastra
  */
 public class Permute {
+
+    private static Map<Character, List<String>> map = new HashMap<Character, List<String>>();
 
     public static List<String> permuteIterative(String input) {
         return Collections.emptyList();
@@ -37,7 +43,8 @@ public class Permute {
         char first = input.charAt(0);
         String remainder = input.substring(1);
         List<String> words = permute(remainder);
-        return generatePermutations(first, words, permutations);
+        List<String> perms = generatePermutations(first, words, permutations);
+        return perms;
     }
 
     private static List<String> generatePermutations(char first, List<String> words, List<String> permutations) {
@@ -53,5 +60,34 @@ public class Permute {
         String front = word.substring(0, i);
         String back = word.substring(i);
         return front + c + back;
+    }
+
+    public static class Permuter {
+
+        public static List<String> permutations = new ArrayList<String>();
+
+        public static void permute(String input) {
+            permute(input.toCharArray(), 0, input.length() - 1);
+        }
+
+        public static void swap(char[] str, int i, int j) {
+            char temp;
+            temp = str[j];
+            str[j] = str[i];
+            str[i] = temp;
+        }
+
+        public static void permute(char[] str, int start, int end) {
+            if (start == end) {
+//                System.out.println(str);
+                permutations.add(new String(str));
+            } else {
+                for (int i = start; i <= end; i++) {
+                    swap(str, start, i);
+                    permute(str, start + 1, end);
+                    swap(str, start, i);
+                }
+            }
+        }
     }
 }

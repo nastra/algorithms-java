@@ -27,7 +27,7 @@ public class FindIntegerTest {
             }
         }
 
-        FindInteger finder = new FindInteger();
+        FindMissingInteger finder = new FindMissingInteger();
         int value = finder.findMissingValue(numbers);
         Assert.assertTrue(!numbers.contains(value));
     }

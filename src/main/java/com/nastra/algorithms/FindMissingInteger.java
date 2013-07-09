@@ -5,7 +5,7 @@ package com.nastra.algorithms;
  *
  * @author nastra - Eduard Tudenhoefner
  */
-public class FindInteger {
+public class FindMissingInteger {
 
     private byte[] bits = new byte[Integer.MAX_VALUE / 8];
 
