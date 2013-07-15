@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
  *
  * @author nastra
  */
-public class FindIntegerTest {
+public class FindMissingIntegerTest {
 
     @Test
     public void findIntegerNotInList() {

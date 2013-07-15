@@ -7,11 +7,12 @@ package com.nastra.algorithms;
  */
 public class FindMissingInteger {
 
-    private byte[] bits = new byte[Integer.MAX_VALUE / 8];
+    private static long maxInts = ((long) Integer.MAX_VALUE) + 1;
+    private static byte[] bits = new byte[(int) (FindMissingInteger.maxInts / 8)];
 
     private void preprocess(Iterable<Integer> numbers) {
         for (int n : numbers) {
-            bits[(byte) n / 8] |= 1 << (n % 8);
+            bits[n / 8] |= 1 << (n % 8);
         }
     }
 
