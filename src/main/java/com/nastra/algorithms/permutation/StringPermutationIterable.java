@@ -10,9 +10,9 @@ import java.util.NoSuchElementException;
 /**
  * An implicit immutable collection of all permutations of a string with an iterator over the permutations.<p> implements Iterable&ltString&gt
  *
- * @see #StringPermutation(String)
+ * @see #StringPermutationIterable(String)
  */
-public class StringPermutation implements Iterable<String> {
+public class StringPermutationIterable implements Iterable<String> {
 
     // could implement Collection<String> but it's immutable, so most methods are essentially vacuous
     protected final String string;
@@ -24,7 +24,7 @@ public class StringPermutation implements Iterable<String> {
      * @see Iterable
      * @see #iterator
      */
-    public StringPermutation(String string) {
+    public StringPermutationIterable(String string) {
         this.string = string;
     }
 

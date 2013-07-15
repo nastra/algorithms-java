@@ -1,6 +1,6 @@
 package com.nastra.algorithms;
 
-import com.nastra.algorithms.permutation.StringPermutation;
+import com.nastra.algorithms.permutation.StringPermutationIterable;
 import com.nastra.algorithms.permutation.Permute;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -66,7 +66,7 @@ public class PermutationTest {
     public void testPermutationsShort() {
         String input = "cdcdcdcdeeeef";
         long expectedSize = Factorial.factorial(input.length());
-        StringPermutation p = new StringPermutation(input);
+        StringPermutationIterable p = new StringPermutationIterable(input);
         List<String> permutations = new ArrayList<String>();
         Iterator<String> iterator = p.iterator();
         while (iterator.hasNext()) {
