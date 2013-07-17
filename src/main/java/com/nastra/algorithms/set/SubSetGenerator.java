@@ -1,8 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.nastra.algorithms;
+package com.nastra.algorithms.set;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,6 +7,9 @@ import java.util.Set;
 
 /**
  * This class provides different implementations to generate all subsets of a given set.
+ * <br>
+ * There are 2^n distinct subsets of an n-element set, including the empty set as well as the set itself.
+ * <br>So for example, the eight subsets of {1, 2, 3} are {{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}
  *
  * @author nastra
  */
