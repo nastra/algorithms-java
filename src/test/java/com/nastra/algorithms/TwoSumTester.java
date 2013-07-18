@@ -1,7 +1,7 @@
 package com.nastra.algorithms;
 
-import junit.framework.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -13,7 +13,9 @@ public class TwoSumTester {
     public void testTwoSum() {
         int[] in = {1, 2, 3, 4, 7, 11};
         int target = 6;
-        boolean hasSum = TwoSum.hasSum(in, target);
+        boolean hasSum = TwoSumSolver.hasSum(in, target);
+        Assert.assertTrue(hasSum);
+        hasSum = TwoSumSolver.hasSumOptimized(in, target);
         Assert.assertTrue(hasSum);
     }
 
@@ -21,7 +23,9 @@ public class TwoSumTester {
     public void testTwoSumFalse() {
         int[] in = {1, 2, 3, 4, 7, 11};
         int target = 16;
-        boolean hasSum = TwoSum.hasSum(in, target);
+        boolean hasSum = TwoSumSolver.hasSum(in, target);
+        Assert.assertFalse(hasSum);
+        hasSum = TwoSumSolver.hasSumOptimized(in, target);
         Assert.assertFalse(hasSum);
     }
 
@@ -29,7 +33,9 @@ public class TwoSumTester {
     public void testTwoSumOneElement() {
         int[] in = {11};
         int target = 11;
-        boolean hasSum = TwoSum.hasSum(in, target);
+        boolean hasSum = TwoSumSolver.hasSum(in, target);
+        Assert.assertFalse(hasSum);
+        hasSum = TwoSumSolver.hasSumOptimized(in, target);
         Assert.assertFalse(hasSum);
     }
 }

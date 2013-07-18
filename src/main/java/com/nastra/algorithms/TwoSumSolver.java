@@ -1,29 +1,36 @@
 package com.nastra.algorithms;
 
 /**
- * Solves the 2Sum Problem using binary search and therefore requires O(n lg n) time. However, this could be improved to O(n) by using a Hashmap
+ * Provides different implementations to solve the 2-sum problem. The problem consists of the following statement:
+ * <br>
+ * Given an integer x and a sorted array of integers, describe an algorithm to determine whether two of the numbers add up to x.
  *
  * @author nastra
  */
-public class TwoSum {
+public class TwoSumSolver {
 
-    public static boolean hasSum(int[] in, int target) {
+    /**
+     * Uses a binary search approach and requires O(n lg n) time.
+     *
+     * @param in The sorted array
+     * @param targetSum The target sum
+     * @return True, if the array contains two number that sum up to the target sum
+     */
+    public static boolean hasSum(int[] in, int targetSum) {
         if (null == in || in.length < 2) {
             return false;
         }
 
-        int low = 1;
-        int high = in.length - 1;
-
         for (int i = 0; i < in.length; i++) {
-            low = i + 1;
-            if (target < in[high]) {
+            int low = i + 1;
+            int high = in.length - 1;
+            if (targetSum < in[high]) {
                 high = high - 1;
             }
 
             while (low <= high) {
                 int mid = (low + high) / 2;
-                int x = target - in[i];
+                int x = targetSum - in[i];
                 if (x == in[mid]) {
                     return true;
                 } else if (x < in[mid]) {
@@ -33,6 +40,31 @@ public class TwoSum {
                 }
             }
         }
+        return false;
+    }
+
+    /**
+     * @param in The sorted array
+     * @param targetSum The target sum
+     * @return True, if the array contains two number that sum up to the target sum
+     */
+    public static boolean hasSumOptimized(int[] in, int targetSum) {
+        if (null == in || in.length < 2) {
+            return false;
+        }
+        int start = 0;
+        int end = in.length - 1;
+        while (start < end) {
+            int currentSum = in[start] + in[end];
+            if (currentSum < targetSum) {
+                start++;
+            } else if (currentSum > targetSum) {
+                end--;
+            } else {
+                return true;
+            }
+        }
+
         return false;
     }
 }
