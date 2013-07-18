@@ -1,4 +1,4 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.sorting;
 
 /**
  *

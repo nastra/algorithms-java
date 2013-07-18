@@ -1,4 +1,4 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.heap;
 
 import java.util.ArrayList;
 import java.util.List;

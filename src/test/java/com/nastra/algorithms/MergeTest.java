@@ -1,5 +1,6 @@
 package com.nastra.algorithms;
 
+import com.nastra.algorithms.sorting.Merge;
 import java.util.Arrays;
 import java.util.Random;
 import org.testng.Assert;

@@ -1,5 +1,6 @@
 package com.nastra.algorithms;
 
+import com.nastra.algorithms.stack.InfixToPostfixTranslator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
