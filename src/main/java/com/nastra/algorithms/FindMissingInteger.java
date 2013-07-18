@@ -1,7 +1,10 @@
 package com.nastra.algorithms;
 
 /**
- * This class efficiently finds an integer value that is not contained in the input list by using a bit vector.
+ * This class efficiently finds an integer value that is not contained in the input list by using a bit vector. <br>This is a solution to the
+ * following interview question:
+ * <br> "Given an input file with four billion non-negative integers, provide an algorithm to generate an integer which is not contained in the
+ * file.<br> Assume that you have 1GB of memory available for this task."
  *
  * @author nastra - Eduard Tudenhoefner
  */

@@ -3,6 +3,8 @@ package com.nastra.algorithms.tree;
 import java.util.List;
 
 /**
+ * Solution to the following interview question:
+ * <br>"Traverse a tree without using recursion or any other helper data structures."
  *
  * @author nastra - Eduard Tudenhoefner
  */
@@ -19,7 +21,7 @@ public class MorrisTraversal<T> {
     }
 
     private Node<T> getParentOf(Node<T> temp, Node left) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     private class Node<T> {
