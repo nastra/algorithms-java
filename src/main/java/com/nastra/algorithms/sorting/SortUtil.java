@@ -1,24 +1,20 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.nastra.algorithms.sorting;
 
 /**
  *
  * @author nastra
  */
-public abstract class AbstractSort {
+public abstract class SortUtil {
 
-    protected boolean lessThan(Comparable a, Comparable b) {
+    public static boolean lessThan(Comparable a, Comparable b) {
         return a.compareTo(b) < 0;
     }
 
-    protected boolean greaterThan(Comparable a, Comparable b) {
+    public static boolean greaterThan(Comparable a, Comparable b) {
         return a.compareTo(b) > 0;
     }
 
-    public void showContent(Comparable[] input) {
+    public static void showContent(Comparable[] input) {
         if (null == input || input.length == 0) {
             return;
         }
@@ -34,7 +30,7 @@ public abstract class AbstractSort {
      * @param input
      * @return True, if the array entries are in order.
      */
-    public boolean isSorted(Comparable[] input) {
+    public static boolean isSorted(Comparable[] input) {
         if (null == input || input.length == 0) {
             return false;
         }
@@ -46,5 +42,20 @@ public abstract class AbstractSort {
         return true;
     }
 
-    public abstract void sort(Comparable[] input);
+    /**
+     *
+     * @param input
+     * @return True, if the array entries are in reverse sorted order.
+     */
+    public static boolean isSortedInReverse(Comparable[] input) {
+        if (null == input || input.length == 0) {
+            return false;
+        }
+        for (int i = 0; i < input.length - 1; i++) {
+            if (lessThan(input[i], input[i + 1])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
