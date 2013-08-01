@@ -11,7 +11,7 @@ package com.nastra.algorithms;
 public class LevenshteinDistance {
 
     /**
-     * Runs in time O(n*m) where n is the length of the first string and m is the length of the second string.
+     * Runs in time O(n*m) where n is the length of the first string and m is the length of the second string. Also requires O(n*m) of space.
      *
      * @param str1
      * @param str2
