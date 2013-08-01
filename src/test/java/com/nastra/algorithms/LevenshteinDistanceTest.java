@@ -38,4 +38,14 @@ public class LevenshteinDistanceTest {
 
         Assert.assertEquals(dist, expectedDistance);
     }
+
+    @Test
+    public void testFour() {
+        String a = "";
+        String b = "Tor";
+        int expectedDistance = 3;
+        int dist = LevenshteinDistance.computeDistance(a.toCharArray(), b.toCharArray());
+
+        Assert.assertEquals(dist, expectedDistance);
+    }
 }

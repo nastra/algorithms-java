@@ -10,6 +10,13 @@ package com.nastra.algorithms;
  */
 public class LevenshteinDistance {
 
+    /**
+     * Runs in time O(n*m) where n is the length of the first string and m is the length of the second string.
+     *
+     * @param str1
+     * @param str2
+     * @return The minimum number of edit operations required to transform the first string into the second string.
+     */
     public static int computeDistance(char[] str1, char[] str2) {
         if (str1.length == 0) {
             return str2.length;
