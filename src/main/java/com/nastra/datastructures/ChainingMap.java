@@ -16,7 +16,10 @@ public class ChainingMap<K, V> {
 
     public ChainingMap(int size) {
         this.size = size;
-        table =  new KeyValueList[size];
+        table = new KeyValueList[size];
+        for (int i = 0; i < size; i++) {
+            table[i] = new KeyValueList<K, V>();
+        }
     }
 
     private int hash(K key) {
