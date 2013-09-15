@@ -22,11 +22,11 @@ public class EdgeWeightedGraph {
         }
     }
 
-    public int vertices() {
+    public int verticesCount() {
         return vertices;
     }
 
-    public int edges() {
+    public int edgeCount() {
         return edges;
     }
 
@@ -40,5 +40,17 @@ public class EdgeWeightedGraph {
 
     public Iterable<Edge> adjacent(int vertex) {
         return adjacent[vertex];
+    }
+
+    public Iterable<Edge> edges() {
+        Set<Edge> set = new HashSet<Edge>();
+        for (int v = 0; v < vertices; v++) {
+            for (Edge edge : adjacent[v]) {
+                if (edge.otherSide(v) > v) {
+                    set.add(edge);
+                }
+            }
+        }
+        return set;
     }
 }

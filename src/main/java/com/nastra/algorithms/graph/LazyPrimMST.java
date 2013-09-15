@@ -19,11 +19,11 @@ public class LazyPrimMST {
     private MinPQ<Edge> pq;
 
     public LazyPrimMST(EdgeWeightedGraph graph) {
-        visited = new boolean[graph.vertices()];
+        visited = new boolean[graph.verticesCount()];
         pq = new MinPQ<Edge>();
         minimumSpanningTree = new LinkedList<Edge>();
         Random random = new Random();
-        int startingVertex = random.nextInt(graph.vertices() + 1);
+        int startingVertex = random.nextInt(graph.verticesCount() + 1);
         visit(graph, startingVertex); // we assume a connected graph here
         while (!pq.isEmpty()) {
             Edge e = pq.delMin();
