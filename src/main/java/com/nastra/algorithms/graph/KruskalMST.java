@@ -33,4 +33,16 @@ public class KruskalMST {
             }
         }
     }
+
+    public Iterable<Edge> edges() {
+        return minimumSpanningTree;
+    }
+
+    public double weight() {
+        double total = 0.0d;
+        for (Edge edge : minimumSpanningTree) {
+            total += edge.weight();
+        }
+        return total;
+    }
 }
