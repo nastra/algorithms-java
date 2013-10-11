@@ -1,7 +1,6 @@
 package com.nastra.algorithms.sorting;
 
 import com.nastra.datastructures.MinPQ;
-import static java.lang.Integer.compare;
 import java.util.ArrayList;
 import java.util.List;
 
