@@ -2,7 +2,6 @@ algorithms-java
 ===============
 
 This repository contains:
--------------------------
 - Common Algorithms that were implemented using Java
 - Solutions to a lot of interview questions
 
@@ -14,8 +13,8 @@ Graph Algorithms & Solutions:
 - Algorithm that solves the interview question: "Design an efficient algorithm that takes as input a collection of equality and 
 inequality constraints and decides whether the constraints can be satisfied simultaneously."
 
-Sorting (package 'com.nastra.algorithms.sorting'):
---------------------------------------------------
+Sorting:
+--------
 - Mergesort
 - Calculating the number of inversions
 - Merging k sorted arrays in an efficient manner.
