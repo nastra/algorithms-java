@@ -38,6 +38,13 @@ Some general algorithms and/or solutions:
 - Different algorithms and approaches were implemented to generate all permutations of a given string
 - and many more...
 
+Searching:
+---------------------
+- Different solutions to interview questions that relate to searching, such as 
+- "Find the first occurrence that is larger than k..."
+- "Search a sorted array where A[i] = i"
+- ...
+
 
 Data Structures:
 -----------------
