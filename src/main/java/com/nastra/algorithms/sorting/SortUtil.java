@@ -58,4 +58,10 @@ public abstract class SortUtil {
         }
         return true;
     }
+
+    public static void swap(Comparable[] input, int i, int j) {
+        Comparable tmp = input[i];
+        input[i] = input[j];
+        input[j] = tmp;
+    }
 }

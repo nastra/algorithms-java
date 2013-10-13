@@ -4,6 +4,8 @@
  */
 package com.nastra.algorithms.sorting;
 
+import com.nastra.algorithms.Random;
+
 /**
  *
  * @author nastra
@@ -15,9 +17,34 @@ public class Quick {
             return;
         }
 
-        sort(in, 0, in.length - 1);
+        randomizedSort(in, 0, in.length - 1);
+//        sort(in, 0, in.length - 1);
     }
 
+    /**
+     * This version of the quicksort algorithm uses randomized partitioning
+     *
+     * @param in
+     * @param low
+     * @param high
+     */
+    private static void randomizedSort(Comparable[] in, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+
+        int p = randomizedPartition(in, low, high);
+        sort(in, low, p - 1);
+        sort(in, p + 1, high);
+    }
+
+    /**
+     * This version of sort uses the book-like quicksort implementation.
+     *
+     * @param in
+     * @param low
+     * @param high
+     */
     private static void sort(Comparable[] in, int low, int high) {
         if (low >= high) {
             return;
@@ -37,9 +64,21 @@ public class Quick {
                 SortUtil.swap(in, i, j);
                 i++;
             }
-
         }
         SortUtil.swap(in, low, i - 1);
         return i - 1;
+    }
+
+    /**
+     *
+     * @param in
+     * @param low
+     * @param high
+     * @return
+     */
+    private static int randomizedPartition(Comparable[] in, int low, int high) {
+        int randomIndex = Random.randInt(low, high);
+        SortUtil.swap(in, 0, randomIndex);
+        return partition(in, low, high);
     }
 }
