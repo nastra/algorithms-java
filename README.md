@@ -15,7 +15,8 @@ inequality constraints and decides whether the constraints can be satisfied simu
 
 Sorting:
 --------
-- Mergesort
+- Mergesort (with multiple improvements)
+- Quicksort (with multiple improvements)
 - Calculating the number of inversions
 - Merging k sorted arrays in an efficient manner.
 
