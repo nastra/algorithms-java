@@ -1,6 +1,6 @@
 package com.nastra.algorithms;
 
-import com.nastra.algorithms.sorting.StackSorter;
+import com.nastra.algorithms.stack.StackSorter;
 import java.util.Random;
 import java.util.Stack;
 import org.testng.Assert;

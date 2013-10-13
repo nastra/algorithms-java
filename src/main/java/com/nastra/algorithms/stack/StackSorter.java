@@ -1,4 +1,4 @@
-package com.nastra.algorithms.sorting;
+package com.nastra.algorithms.stack;
 
 import java.util.Stack;
 
