@@ -1,5 +1,5 @@
-algorithms-java
-===============
+Algorithms & Interview Questions
+================================
 
 This repository contains:
 - Common Algorithms that were implemented using Java
@@ -12,6 +12,10 @@ Graph Algorithms & Solutions:
 - Algorithm that solves the max-spacing k clustering problem: "Given a distance measure d and k, compute the k-clustering with maximum spacing"
 - Algorithm that solves the interview question: "Design an efficient algorithm that takes as input a collection of equality and 
 inequality constraints and decides whether the constraints can be satisfied simultaneously."
+- Algorithm based on DFS that allows to iterate over a directed graph in different orders (preorder, postorder, reverse postorder)
+- Algorithm based on DFS to determine whether a directed graph contains a cycle. It also returns the entire path from source vertex to the cycle end
+- Algorithm to compute the topological ordering of a directed graph that is also a DAG
+
 
 Sorting:
 --------
@@ -53,6 +57,7 @@ Data Structures:
 - A connected component finder
 - Edge-weighted graph
 - Graph
+- Directed Graph
 - Least-recently-used cache (LRU cache)
 - MinHeap (MinPriorityQueue)
 - MaxHeap (MaxPriorityQueue)
