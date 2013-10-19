@@ -46,9 +46,9 @@ Some general algorithms and/or solutions:
 Searching:
 ---------------------
 - Different solutions to interview questions that relate to searching, such as 
-- "Find the first occurrence that is larger than k..."
-- "Search a sorted array where A[i] = i"
-- ...
+- Algorithm to find the first occurrence that is larger than k
+- Algorithm to search a sorted array where A[i] = i
+- Algorithm to search a sorted array of unknown length
 
 
 Data Structures:

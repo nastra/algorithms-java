@@ -59,4 +59,53 @@ public class ArraySearch {
         }
         return -1;
     }
+
+    /**
+     * Performs a binary search on an unknown-length array that is sorted. The running time is still O(log n) as in the classical binary search.
+     *
+     * @param in The sorted array being searched
+     * @param k The key to search for
+     * @return The index where in[i] = k or -1 if k could not be found.
+     */
+    public static int binarySearchUnknownLength(int[] in, int k) {
+        if (null == in || in.length == 0) {
+            return -1;
+        }
+        int low = 0;
+        int high = 0;
+        int p = 1;
+        while (true) {
+            try {
+                if (in[p] == k) { // we were lucky and found k
+                    return p;
+                } else if (k > in[p]) {
+                    low = p;
+                    p = p * 2;
+                } else {
+                    high = p - 1;
+                    break;
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                high = p - 1;
+                break;
+            }
+        }
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            try {
+                if (k == in[mid]) {
+                    return mid;
+                } else if (k > in[mid]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                high = mid - 1;
+            }
+        }
+
+        return -1;
+    }
 }

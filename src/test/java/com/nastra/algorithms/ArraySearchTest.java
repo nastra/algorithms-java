@@ -1,7 +1,9 @@
 package com.nastra.algorithms;
 
 import com.nastra.algorithms.search.ArraySearch;
+import java.util.Arrays;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -26,15 +28,57 @@ public class ArraySearchTest {
         resultIndex = ArraySearch.firstOccurrenceLargerThan(in, -23);
         Assert.assertTrue(resultIndex == 0);
     }
-    
+
     @Test
     public void testElementEqualToIndex() {
         int[] in = {-4, -1, 2, 4, 5, 6, 9};
         int resultIndex = ArraySearch.elementEqualToIndex(in);
         Assert.assertTrue(resultIndex == 2);
-        
+
         int[] in2 = {-4, -1, 3, 5, 9, 12, 17};
         resultIndex = ArraySearch.elementEqualToIndex(in2);
         Assert.assertTrue(resultIndex == -1);
+    }
+
+    @Test
+    public void testArrayWithUnknownLength() {
+        int[] in = {-4, -1, 2, 4, 5, 6, 9};
+        int resultIndex = ArraySearch.binarySearchUnknownLength(in, 5);
+        Assert.assertTrue(resultIndex == 4, "ResultIndex was " + resultIndex);
+
+        resultIndex = ArraySearch.binarySearchUnknownLength(in, 9);
+        Assert.assertTrue(resultIndex == 6, "ResultIndex was " + resultIndex);
+
+        resultIndex = ArraySearch.binarySearchUnknownLength(in, 51);
+        Assert.assertTrue(resultIndex == -1, "ResultIndex was " + resultIndex);
+
+        resultIndex = ArraySearch.binarySearchUnknownLength(in, -23);
+        Assert.assertTrue(resultIndex == -1, "ResultIndex was " + resultIndex);
+    }
+
+    @Test
+    public void testLargeArrayWithUnknownLength() {
+        for (int i = 0; i < 100; i++) {
+            int[] in = generateRandomArray(10000, 100000);
+            java.util.Random generator = new java.util.Random();
+            int k = generator.nextInt(100000);
+            int indexOfK = Arrays.binarySearch(in, k);
+            if (indexOfK < 0) {
+                indexOfK = -1;
+            }
+
+            int resultIndex = ArraySearch.binarySearchUnknownLength(in, k);
+            Assert.assertTrue(resultIndex == indexOfK, "ResultIndex was " + resultIndex + " but we expected " + indexOfK);
+        }
+    }
+
+    private int[] generateRandomArray(int arraySize, int maxElement) {
+        int[] numbers = new int[arraySize];
+        java.util.Random generator = new java.util.Random();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = generator.nextInt(maxElement);
+        }
+        Arrays.sort(numbers);
+        return numbers;
     }
 }
