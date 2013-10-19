@@ -10,30 +10,30 @@ import java.util.Set;
  */
 public class Graph {
 
-    private final int vertices;
-    private int edges;
+    private final int verticesCount;
+    private int edgeCount;
     private Set<Integer>[] adjacent;
 
     public Graph(int vertices) {
-        this.vertices = vertices;
+        this.verticesCount = vertices;
         adjacent = new Set[vertices];
         for (int i = 0; i < vertices; i++) {
             adjacent[i] = new HashSet<Integer>();
         }
     }
 
-    public int vertices() {
-        return vertices;
+    public int verticesCount() {
+        return verticesCount;
     }
 
-    public int edges() {
-        return edges;
+    public int edgeCount() {
+        return edgeCount;
     }
 
     public void addEdge(int v, int w) {
         adjacent[v].add(w);
         adjacent[w].add(v);
-        edges++;
+        edgeCount++;
     }
 
     public Iterable<Integer> adjacent(int v) {

@@ -12,9 +12,9 @@ public class ConnectedComponentsFinder {
     private int count;
 
     public ConnectedComponentsFinder(Graph g) {
-        visited = new boolean[g.vertices()];
-        group = new int[g.vertices()];
-        for (int i = 0; i < g.vertices(); i++) {
+        visited = new boolean[g.verticesCount()];
+        group = new int[g.verticesCount()];
+        for (int i = 0; i < g.verticesCount(); i++) {
             if (!visited[i]) {
                 dfs(g, i);
                 count++;
