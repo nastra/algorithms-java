@@ -1,5 +1,7 @@
 package com.nastra.algorithms.search;
 
+import java.util.Arrays;
+
 /**
  *
  * @author nastra
@@ -18,6 +20,7 @@ public class SuffixArray {
         for (int i = 0; i < length; i++) {
             suffixes[i] = text.substring(i);
         }
+        Arrays.sort(suffixes);
     }
 
     public int length() {
@@ -54,11 +57,16 @@ public class SuffixArray {
         return length - suffixes[i].length();
     }
 
+    /**
+     *
+     * @param i
+     * @return The ith suffix in the suffix array
+     */
     public String select(int i) {
         return suffixes[i];
     }
 
-    public int longestCommonPrefix(int i) {
+    public int lengthOfLongestCommonPrefix(int i) {
         return longestCommonPrefix(suffixes[i], suffixes[i - 1]);
     }
 
