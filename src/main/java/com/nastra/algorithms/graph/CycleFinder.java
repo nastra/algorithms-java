@@ -36,7 +36,7 @@ public class CycleFinder {
                 edgeTo[w] = s;
                 dfs(graph, w);
             } else if (onCurrentStack[w]) {
-                determineEntireCyclePath(graph, s, w);
+                determineEntireCyclePath(s, w);
             }
         }
         onCurrentStack[s] = false;
@@ -46,10 +46,10 @@ public class CycleFinder {
         return null != cycle;
     }
 
-    private void determineEntireCyclePath(Digraph graph, int s, int w) {
+    private void determineEntireCyclePath(int s, int w) {
         cycle = new Stack<Integer>();
-        for (int i = s; s != w; i = edgeTo[i]) {
-            cycle.push(i);
+        for (int x = s; x != w; x = edgeTo[x]) {
+            cycle.push(x);
         }
         cycle.push(w);
         cycle.push(s);

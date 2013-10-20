@@ -108,4 +108,39 @@ public class ArraySearch {
 
         return -1;
     }
+
+    /**
+     * Suppose a sorted array is rotated at some pivot unknown to you beforehand. (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2). How do you find an
+     * element in the rotated array efficiently? You may assume no duplicate exists in the array.
+     *
+     * @param in
+     * @param k
+     * @return The index of k if in[i] == k, or -1 if k could not be found.
+     */
+    public static int binarySearchRotatedArray(int[] in, int k) {
+        if (null == in || in.length == 0) {
+            return -1;
+        }
+        int low = 0;
+        int high = in.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (in[mid] == k) {
+                return mid;
+            } else if (in[low] <= in[mid]) { // the left side is sorted
+                if (k >= in[low] && k <= in[mid]) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            } else if (in[mid] < in[high]) {
+                if (k >= in[mid] && k <= in[high]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
 }
