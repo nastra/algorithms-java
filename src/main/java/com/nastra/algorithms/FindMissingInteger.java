@@ -10,6 +10,7 @@ package com.nastra.algorithms;
  * @author nastra - Eduard Tudenhoefner
  */
 public class FindMissingInteger {
+    private static final int ONES = 0xFF;
 
     private static long maxInts = ((long) Integer.MAX_VALUE) + 1;
     private static byte[] bits = new byte[(int) (FindMissingInteger.maxInts / 8)];
@@ -32,12 +33,6 @@ public class FindMissingInteger {
         return -1;
     }
 
-    /**
-     * FIXME: currently not working as expected
-     *
-     * @param numbers
-     * @return DO NOT USE, NOT WORKING AS EXPECTED
-     */
     public int findMissingValueAlternative(Iterable<Integer> numbers) {
         preprocess(numbers);
         for (int i = 0; i < bits.length; i++) {
@@ -57,6 +52,6 @@ public class FindMissingInteger {
     }
 
     private boolean hasUnsetBit(int x) {
-        return (x & 1) == 0;
+        return (x ^ ONES) != 0;
     }
 }
