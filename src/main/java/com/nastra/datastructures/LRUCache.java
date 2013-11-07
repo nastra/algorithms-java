@@ -23,7 +23,7 @@ public class LRUCache<K, V> {
     private Map<K, V> cache;
 
     public LRUCache(int initialCapacity) {
-        cache = Collections.synchronizedMap(new LinkedHashMap<K, V>() {
+        cache = Collections.synchronizedMap(new LinkedHashMap<K, V>(initialCapacity, 0.75f, true) {
             @Override
             protected boolean removeEldestEntry(java.util.Map.Entry<K, V> eldest) {
                 return size() > size;
