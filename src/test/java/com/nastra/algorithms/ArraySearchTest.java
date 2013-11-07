@@ -16,16 +16,16 @@ public class ArraySearchTest {
     public void testOccurrenceLargerThanKFinder() {
         int[] in = {-14, -10, 2, 108, 108, 243, 285, 285, 289, 401};
 
-        int resultIndex = ArraySearch.firstOccurrenceLargerThan(in, 500);
+        int resultIndex = ArraySearch.ceil(in, 500);
         Assert.assertTrue(resultIndex == -1);
 
-        resultIndex = ArraySearch.firstOccurrenceLargerThan(in, 5);
+        resultIndex = ArraySearch.ceil(in, 5);
         Assert.assertTrue(resultIndex == 3);
 
-        resultIndex = ArraySearch.firstOccurrenceLargerThan(in, 101);
+        resultIndex = ArraySearch.ceil(in, 101);
         Assert.assertTrue(resultIndex == 3);
 
-        resultIndex = ArraySearch.firstOccurrenceLargerThan(in, -23);
+        resultIndex = ArraySearch.ceil(in, -23);
         Assert.assertTrue(resultIndex == 0);
     }
 
@@ -80,5 +80,21 @@ public class ArraySearchTest {
         }
         Arrays.sort(numbers);
         return numbers;
+    }
+
+    @Test
+    public void testFactorialZeroes() {
+        System.out.println(countZeroes(100));
+
+    }
+
+    int countZeroes(int n) {
+        int res = 0;
+        int div = 5;
+        while (div <= n) {
+            res = res + (n / div);
+            div = div * 5;
+        }
+        return res;
     }
 }

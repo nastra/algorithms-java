@@ -15,13 +15,20 @@ public class ArraySearch {
      * @param k The key k
      * @return The index of the first occurrence larger than k. In case every element is less than or equal to k, we return -1;
      */
-    public static int firstOccurrenceLargerThan(int[] in, int k) {
+    public static int ceil(int[] in, int k) {
+        if (null == in || in.length == 0) {
+            return -1;
+        }
+        int low = 0;
+        int high = in.length - 1;
+        return ceil(in, k, low, high);
+    }
+
+    public static int ceil(int[] in, int k, int low, int high) {
         if (null == in || in.length == 0) {
             return -1;
         }
         int result = -1;
-        int low = 0;
-        int high = in.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
             if (k >= in[mid]) {
