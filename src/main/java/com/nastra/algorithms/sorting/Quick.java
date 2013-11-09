@@ -78,7 +78,7 @@ public class Quick {
      */
     private static int randomizedPartition(Comparable[] in, int low, int high) {
         int randomIndex = Random.randInt(low, high);
-        SortUtil.swap(in, 0, randomIndex);
+        SortUtil.swap(in, low, randomIndex);
         return partition(in, low, high);
     }
 }
