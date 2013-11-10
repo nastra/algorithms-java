@@ -4,9 +4,33 @@ import com.nastra.datastructures.ListNode;
 
 /**
  *
- * @author nastra
+ * @author nastra - Eduard Tudenhoefner
  */
 public class Power {
+
+    /**
+     * Algorithm runs in O(log n) because we use the fact that base^exp can be expressed as (base^(exp/2))^2. If exp is even, then base^exp =
+     * (base^(exp/2))^2. If exp is odd, then base^exp = base * (base^(exp/2))^2
+     *
+     * @param base
+     * @param exp
+     * @return Calculates base^exp.
+     */
+    public static long power(int base, int exp) {
+        if (exp <= 0) {
+            return 1;
+        }
+        long x = power(base, exp / 2);
+        if (isEven(exp)) {
+            return x * x;
+        } else {
+            return base * x * x;
+        }
+    }
+
+    private static boolean isEven(int n) {
+        return (n & 1) == 0;
+    }
 
     public static void powerOf(int n) {
         if (n <= 0) {
@@ -111,7 +135,7 @@ public class Power {
         Power.powerOfEfficient(80);
         System.out.println("");
         System.out.println("--------------------------------------");
-        
+
         Power.powerOf(125);
         System.out.println("--------------------------------------");
         Power.powerOfEfficient(125);
