@@ -1,4 +1,4 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.search;
 
 /**
  * This class efficiently finds an integer value that is not contained in the input list by using a bit vector. It requires ~512 MB of memory for

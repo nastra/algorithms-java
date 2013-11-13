@@ -1,5 +1,6 @@
 package com.nastra.algorithms;
 
+import com.nastra.algorithms.search.FindMissingInteger;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;

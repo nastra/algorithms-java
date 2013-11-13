@@ -1,5 +1,6 @@
 package com.nastra.algorithms;
 
+import com.nastra.algorithms.search.Power;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

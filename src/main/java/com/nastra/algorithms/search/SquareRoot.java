@@ -1,4 +1,4 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.search;
 
 import com.google.common.math.DoubleMath;
 

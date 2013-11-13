@@ -1,8 +1,6 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.heap;
 
-import com.nastra.algorithms.search.ArraySearch;
 import com.nastra.datastructures.MedianHeap;
-import java.util.Arrays;
 
 /**
  * Solution to the following interview question: "Design an algorithm to compute the running median of a sequence."
