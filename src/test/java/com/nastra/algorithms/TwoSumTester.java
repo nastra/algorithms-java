@@ -38,4 +38,12 @@ public class TwoSumTester {
         hasSum = TwoSumSolver.hasSumOptimized(in, target);
         Assert.assertFalse(hasSum);
     }
+
+    @Test
+    public void testTargetHigherThanTwoValues() {
+        int[] in = {1, 3, 5, 7, 11};
+        int target = 19;
+        boolean hasSum = TwoSumSolver.hasSumOptimized(in, target);
+        Assert.assertFalse(hasSum);
+    }
 }

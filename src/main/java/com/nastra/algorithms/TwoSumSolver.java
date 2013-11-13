@@ -52,8 +52,13 @@ public class TwoSumSolver {
         if (null == in || in.length < 2) {
             return false;
         }
+        if (!largestSumPossible(in, targetSum)) {
+            return false;
+        }
+
         int start = 0;
         int end = in.length - 1;
+
         while (start < end) {
             int currentSum = in[start] + in[end];
             if (currentSum < targetSum) {
@@ -66,5 +71,9 @@ public class TwoSumSolver {
         }
 
         return false;
+    }
+
+    private static boolean largestSumPossible(int[] in, int targetSum) {
+        return (in[in.length - 1] + in[in.length - 2]) >= targetSum;
     }
 }
