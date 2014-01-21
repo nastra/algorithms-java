@@ -154,6 +154,22 @@ public class MaxPQ<Key> implements Iterable<Key> {
         return max;
     }
 
+    public Key deleteAt(int index) {
+        if (isEmpty() || index < 1 || index > N) {
+            throw new NoSuchElementException("Priority queue underflow");
+        }
+        Key tmp = pq[index];
+        exch(index, N);
+        N--;
+        if (less(pq[index], tmp)) {
+            sink(index);
+        } else {
+            swim(index);
+        }
+        assert isMaxHeap();
+        return tmp;
+    }
+
     /**
      * *********************************************************************
      * Helper functions to restore the heap invariant. ********************************************************************
@@ -191,6 +207,14 @@ public class MaxPQ<Key> implements Iterable<Key> {
         }
     }
 
+    private boolean less(Key i, Key j) {
+        if (comparator == null) {
+            return ((Comparable<Key>) i).compareTo(j) < 0;
+        } else {
+            return comparator.compare(i, j) < 0;
+        }
+    }
+
     private void exch(int i, int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
@@ -198,7 +222,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     // is pq[1..N] a max heap?
-    private boolean isMaxHeap() {
+    public boolean isMaxHeap() {
         return isMaxHeap(1);
     }
 

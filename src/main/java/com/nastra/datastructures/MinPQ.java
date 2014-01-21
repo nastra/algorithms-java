@@ -152,6 +152,22 @@ public class MinPQ<Key> implements Iterable<Key> {
         return min;
     }
 
+    public Key deleteAt(int index) {
+        if (isEmpty() || index < 1 || index > N) {
+            throw new NoSuchElementException("Priority queue underflow");
+        }
+        Key tmp = pq[index];
+        exch(index, N);
+        N--;
+        if (greater(tmp, pq[index])) {
+            swim(index);
+        } else {
+            sink(index);
+        }
+        assert isMinHeap();
+        return tmp;
+    }
+
     /**
      * *********************************************************************
      * Helper functions to restore the heap invariant. ********************************************************************
@@ -189,6 +205,14 @@ public class MinPQ<Key> implements Iterable<Key> {
         }
     }
 
+    private boolean greater(Key i, Key j) {
+        if (comparator == null) {
+            return ((Comparable<Key>) i).compareTo(j) > 0;
+        } else {
+            return comparator.compare(i, j) > 0;
+        }
+    }
+
     private void exch(int i, int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
@@ -196,7 +220,7 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
 
     // is pq[1..N] a min heap?
-    private boolean isMinHeap() {
+    public boolean isMinHeap() {
         return isMinHeap(1);
     }
 

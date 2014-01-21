@@ -142,6 +142,9 @@ public class Power {
         Power.powerOfEfficient(125);
         System.out.println("");
         System.out.println("--------------------------------------");
+        Power.powerOfEfficient(1000000000);
+        System.out.println("");
+        System.out.println("--------------------------------------");
     }
 
     private static ListNode<Integer> reverse(ListNode<Integer> head) {
