@@ -23,8 +23,8 @@ package com.nastra.datastructures;
  */
 public class UnionFind {
 
-    private int[] id;    // id[i] = parent of i
-    private int[] sz;    // sz[i] = number of objects in subtree rooted at i
+    private int[] parent;    // id[i] = parent of i
+    private int[] size;    // sz[i] = number of objects in subtree rooted at i
     private int count;   // number of components
 
     /**
@@ -37,11 +37,11 @@ public class UnionFind {
             throw new IllegalArgumentException();
         }
         count = N;
-        id = new int[N];
-        sz = new int[N];
+        parent = new int[N];
+        size = new int[N];
         for (int i = 0; i < N; i++) {
-            id[i] = i;
-            sz[i] = 1;
+            parent[i] = i;
+            size[i] = 1;
         }
     }
 
@@ -51,11 +51,12 @@ public class UnionFind {
      * @throws java.lang.IndexOutOfBoundsException unless 0 <= p < N
      */
     public int find(int p) {
-        if (p < 0 || p >= id.length) {
+        if (p < 0 || p >= parent.length) {
             throw new IndexOutOfBoundsException();
         }
-        while (p != id[p]) {
-            p = id[p];
+        while (p != parent[p]) {
+            parent[p] = parent[parent[p]]; // implements path compression
+            p = parent[p];
         }
         return p;
     }
@@ -89,12 +90,12 @@ public class UnionFind {
         }
 
         // make smaller root point to larger one
-        if (sz[i] < sz[j]) {
-            id[i] = j;
-            sz[j] += sz[i];
+        if (size[i] < size[j]) {
+            parent[i] = j;
+            size[j] += size[i];
         } else {
-            id[j] = i;
-            sz[i] += sz[j];
+            parent[j] = i;
+            size[i] += size[j];
         }
         count--;
     }
