@@ -6,9 +6,11 @@ package com.nastra.algorithms.search;
 public class LargestSum {
 
     /**
-     * This algorithm uses a divide-and-conquer approach and runs in time O(n log n).
-     *
-     * @param in The input containing positive and negative numbers.
+     * This algorithm uses a divide-and-conquer approach and runs in time O(n
+     * log n).
+     * 
+     * @param in
+     *            The input containing positive and negative numbers.
      * @return The largest sum in a contiguous sequence of numbers.
      */
     public static int largestSum(int[] in) {

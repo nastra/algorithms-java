@@ -1,8 +1,9 @@
 package com.nastra.algorithms.search;
 
 /**
- * Given an array of integers, write a method to find indices m and n such that if elements m through n are sorted, then entire array is sorted.
- *
+ * Given an array of integers, write a method to find indices m and n such that
+ * if elements m through n are sorted, then entire array is sorted.
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class FindUnsortedSubsequence {

@@ -1,7 +1,7 @@
 package com.nastra.systemdesign.filesystem;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class File extends FileEntry {

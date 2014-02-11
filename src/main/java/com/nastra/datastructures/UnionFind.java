@@ -12,25 +12,29 @@ package com.nastra.datastructures;
  ***************************************************************************
  */
 /**
- * The <tt>UF</tt> class represents a union-find data data structure. It supports the <em>union</em> and <em>find</em>
- * operations, along with a method for determining the number of disjoint sets.
+ * The <tt>UF</tt> class represents a union-find data data structure. It
+ * supports the <em>union</em> and <em>find</em> operations, along with a method
+ * for determining the number of disjoint sets.
  * <p>
- * This implementation uses weighted quick union. Creating a data structure with N objects takes linear time. Afterwards, all operations are
- * logarithmic worst-case time.
+ * This implementation uses weighted quick union. Creating a data structure with
+ * N objects takes linear time. Afterwards, all operations are logarithmic
+ * worst-case time.
  * <p>
- * For additional documentation, see <a href="http://algs4.cs.princeton.edu/15uf">Section 1.5</a> of
- * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a
+ * href="http://algs4.cs.princeton.edu/15uf">Section 1.5</a> of <i>Algorithms,
+ * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
 public class UnionFind {
 
-    private int[] parent;    // id[i] = parent of i
-    private int[] size;    // sz[i] = number of objects in subtree rooted at i
-    private int count;   // number of components
+    private int[] parent; // id[i] = parent of i
+    private int[] size; // sz[i] = number of objects in subtree rooted at i
+    private int count; // number of components
 
     /**
      * Create an empty union find data structure with N isolated sets.
-     *
-     * @throws java.lang.IllegalArgumentException if N < 0
+     * 
+     * @throws java.lang.IllegalArgumentException
+     *             if N < 0
      */
     public UnionFind(int N) {
         if (N < 0) {
@@ -47,8 +51,9 @@ public class UnionFind {
 
     /**
      * Return the id of component corresponding to object p.
-     *
-     * @throws java.lang.IndexOutOfBoundsException unless 0 <= p < N
+     * 
+     * @throws java.lang.IndexOutOfBoundsException
+     *             unless 0 <= p < N
      */
     public int find(int p) {
         if (p < 0 || p >= parent.length) {
@@ -70,8 +75,9 @@ public class UnionFind {
 
     /**
      * Are objects p and q in the same set?
-     *
-     * @throws java.lang.IndexOutOfBoundsException unless both 0 <= p < N and 0 <= q < N
+     * 
+     * @throws java.lang.IndexOutOfBoundsException
+     *             unless both 0 <= p < N and 0 <= q < N
      */
     public boolean connected(int p, int q) {
         return find(p) == find(q);
@@ -79,8 +85,9 @@ public class UnionFind {
 
     /**
      * Replace sets containing p and q with their union.
-     *
-     * @throws java.lang.IndexOutOfBoundsException unless both 0 <= p < N and 0 <= q < N
+     * 
+     * @throws java.lang.IndexOutOfBoundsException
+     *             unless both 0 <= p < N and 0 <= q < N
      */
     public void union(int p, int q) {
         int i = find(p);

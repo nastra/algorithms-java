@@ -3,9 +3,10 @@ package com.nastra.algorithms.search;
 import com.nastra.algorithms.Random;
 
 /**
- * This program determines the kth order statistic (the kth smallest number in a list) in O(n) time in the average case and O(n^2) time in the worst
- * case. It achieves this through the Quickselect algorithm.
- *
+ * This program determines the kth order statistic (the kth smallest number in a
+ * list) in O(n) time in the average case and O(n^2) time in the worst case. It
+ * achieves this through the Quickselect algorithm.
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class OrderStatistic {

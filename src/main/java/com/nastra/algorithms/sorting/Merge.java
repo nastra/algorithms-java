@@ -1,7 +1,7 @@
 package com.nastra.algorithms.sorting;
 
 /**
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Merge {
@@ -30,12 +30,17 @@ public class Merge {
 
     /**
      * Merges the two subparts
-     *
-     * @param input The input
-     * @param aux The auxiliary array
-     * @param low Indicates the starting index
-     * @param mid Indicates the mid index
-     * @param high Indicates the ending index
+     * 
+     * @param input
+     *            The input
+     * @param aux
+     *            The auxiliary array
+     * @param low
+     *            Indicates the starting index
+     * @param mid
+     *            Indicates the mid index
+     * @param high
+     *            Indicates the ending index
      */
     private static void merge(Comparable[] input, Comparable[] aux, int low, int mid, int high) {
         int i = low;

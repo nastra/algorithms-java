@@ -2,7 +2,7 @@ package com.nastra.datastructures;
 
 /**
  * A simple linked list node that stores a key and a value
- *
+ * 
  * @author nastra
  */
 public class KeyValueNode<K, V> {

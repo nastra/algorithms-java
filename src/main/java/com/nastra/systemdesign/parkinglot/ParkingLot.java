@@ -1,7 +1,7 @@
 package com.nastra.systemdesign.parkinglot;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class ParkingLot {
@@ -91,7 +91,16 @@ public class ParkingLot {
         }
 
         private int findAvailableSpot(Vehicle v) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationException("Not supported yet."); // To
+                                                                           // change
+                                                                           // body
+                                                                           // of
+                                                                           // generated
+                                                                           // methods,
+                                                                           // choose
+                                                                           // Tools
+                                                                           // |
+                                                                           // Templates.
         }
 
         private boolean startParkingInSpot(Vehicle vehicle, int spotNumber) {

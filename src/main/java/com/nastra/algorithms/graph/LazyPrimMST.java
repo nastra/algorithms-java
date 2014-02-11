@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  * Implements a lazy version of Prim's minimum spanning tree algorithm.
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class LazyPrimMST {

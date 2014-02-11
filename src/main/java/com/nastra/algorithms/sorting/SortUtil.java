@@ -1,7 +1,7 @@
 package com.nastra.algorithms.sorting;
 
 /**
- *
+ * 
  * @author nastra
  */
 public abstract class SortUtil {
@@ -43,7 +43,7 @@ public abstract class SortUtil {
     }
 
     /**
-     *
+     * 
      * @param input
      * @return True, if the array entries are in reverse sorted order.
      */

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 /**
  * Solution to a Facebook interview question
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class SolutionFacebook {

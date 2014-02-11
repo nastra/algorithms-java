@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * Represents an undirected graph
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Graph {

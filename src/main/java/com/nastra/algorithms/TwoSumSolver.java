@@ -1,20 +1,24 @@
 package com.nastra.algorithms;
 
 /**
- * Provides different implementations to solve the 2-sum problem. The problem consists of the following statement:
- * <br>
- * Given an integer x and a sorted array of integers, describe an algorithm to determine whether two of the numbers add up to x.
- *
+ * Provides different implementations to solve the 2-sum problem. The problem
+ * consists of the following statement: <br>
+ * Given an integer x and a sorted array of integers, describe an algorithm to
+ * determine whether two of the numbers add up to x.
+ * 
  * @author nastra
  */
 public class TwoSumSolver {
 
     /**
      * Uses a binary search approach and requires O(n lg n) time.
-     *
-     * @param in The sorted array
-     * @param targetSum The target sum
-     * @return True, if the array contains two number that sum up to the target sum
+     * 
+     * @param in
+     *            The sorted array
+     * @param targetSum
+     *            The target sum
+     * @return True, if the array contains two number that sum up to the target
+     *         sum
      */
     public static boolean hasSum(int[] in, int targetSum) {
         if (null == in || in.length < 2) {
@@ -44,9 +48,12 @@ public class TwoSumSolver {
     }
 
     /**
-     * @param in The sorted array
-     * @param targetSum The target sum
-     * @return True, if the array contains two number that sum up to the target sum
+     * @param in
+     *            The sorted array
+     * @param targetSum
+     *            The target sum
+     * @return True, if the array contains two number that sum up to the target
+     *         sum
      */
     public static boolean hasSumOptimized(int[] in, int targetSum) {
         if (null == in || in.length < 2) {

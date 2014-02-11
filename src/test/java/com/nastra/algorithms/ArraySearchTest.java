@@ -1,13 +1,14 @@
 package com.nastra.algorithms;
 
-import com.nastra.algorithms.search.ArraySearch;
 import java.util.Arrays;
+
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.nastra.algorithms.search.ArraySearch;
+
 /**
- *
+ * 
  * @author nastra
  */
 public class ArraySearchTest {

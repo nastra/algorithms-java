@@ -6,10 +6,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Implements a Queue that provides access to the max element in O(1) time. We use a simple queue to store all the elements and a Deque
- * (http://en.wikipedia.org/wiki/Double-ended_queue) for remembering the max element. The operations max() and dequeue() run in constant time. The
- * enqueue() operation could lead to many ejections in the Deque, however the amortized time of enqueue()/dequeue()/max() will be O(n).
- *
+ * Implements a Queue that provides access to the max element in O(1) time. We
+ * use a simple queue to store all the elements and a Deque
+ * (http://en.wikipedia.org/wiki/Double-ended_queue) for remembering the max
+ * element. The operations max() and dequeue() run in constant time. The
+ * enqueue() operation could lead to many ejections in the Deque, however the
+ * amortized time of enqueue()/dequeue()/max() will be O(n).
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class QueueWithMax<T extends Comparable> {

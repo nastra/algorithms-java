@@ -8,15 +8,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Problem statement is as following: Given a distance measure d and k, compute the k-clustering with maximum spacing
- *
+ * Problem statement is as following: Given a distance measure d and k, compute
+ * the k-clustering with maximum spacing
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class MaxSpacingKClustering {
 
     private Queue<Edge> minimumSpanningTree;
     private UnionFind uf;
-    private Edge edgeWithMaxSpacing; // the next edge to be extracted after we have k clusters
+    private Edge edgeWithMaxSpacing; // the next edge to be extracted after we
+                                     // have k clusters
 
     public MaxSpacingKClustering(EdgeWeightedGraph graph, int k) {
         minimumSpanningTree = new LinkedList<Edge>();

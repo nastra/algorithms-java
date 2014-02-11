@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class IsomorphicTest {

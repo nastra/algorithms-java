@@ -5,7 +5,7 @@ import java.util.Queue;
 
 /**
  * This class uses an R-way Trie to implement a symbol table
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Trie<T> {

@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class OrderStatisticTest {
@@ -77,7 +77,7 @@ public class OrderStatisticTest {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt();
         }
-//        Arrays.sort(array);
+        // Arrays.sort(array);
         return array;
     }
 }

@@ -1,7 +1,7 @@
 package com.nastra.systemdesign.parkinglot;
 
 /**
- *
+ * 
  * @author nastra
  */
 public enum SpotSize {

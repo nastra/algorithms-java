@@ -2,7 +2,7 @@ package com.nastra.datastructures;
 
 /**
  * A singly linked list where each node consists of a <Key, Value> pair.
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class KeyValueList<K, V> {
@@ -15,7 +15,7 @@ public class KeyValueList<K, V> {
 
     /**
      * Inserting a new element is done in time O(n) in the worst case.
-     *
+     * 
      * @param key
      * @param value
      */
@@ -48,8 +48,9 @@ public class KeyValueList<K, V> {
 
     /**
      * Retrieving a node is done in time O(n) in the worst case.
-     *
-     * @param key The key to search for
+     * 
+     * @param key
+     *            The key to search for
      * @return The value associated with the given key.
      */
     public V get(K key) {

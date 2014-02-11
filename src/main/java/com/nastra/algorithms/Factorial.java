@@ -1,7 +1,7 @@
 package com.nastra.algorithms;
 
 /**
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Factorial {

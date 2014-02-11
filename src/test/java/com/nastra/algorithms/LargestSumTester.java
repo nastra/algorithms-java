@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class LargestSumTester {
@@ -16,7 +16,6 @@ public class LargestSumTester {
         int expectedSum = 5;
         int sum = LargestSum.largestSum(one);
         Assert.assertEquals(expectedSum, sum);
-
 
         int[] two = {-6, 3, -5, 9, -4, 7};
         expectedSum = 12;

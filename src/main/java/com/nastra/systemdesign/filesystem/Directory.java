@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class Directory extends FileEntry {

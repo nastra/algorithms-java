@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class QuickSortTest {

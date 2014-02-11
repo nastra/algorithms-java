@@ -17,23 +17,28 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * The <tt>MinPQ</tt> class represents a priority queue of generic keys. It supports the usual <em>insert</em> and <em>delete-the-minimum</em>
- * operations, along with methods for peeking at the minimum key, testing if the priority queue is empty, and iterating through the keys.
+ * The <tt>MinPQ</tt> class represents a priority queue of generic keys. It
+ * supports the usual <em>insert</em> and <em>delete-the-minimum</em>
+ * operations, along with methods for peeking at the minimum key, testing if the
+ * priority queue is empty, and iterating through the keys.
  * <p>
- * The <em>insert</em> and <em>delete-the-minimum</em> operations take logarithmic amortized time. The <em>min</em>, <em>size</em>, and
- * <em>is-empty</em> operations take constant time. Construction takes time proportional to the specified capacity or the number of items used to
+ * The <em>insert</em> and <em>delete-the-minimum</em> operations take
+ * logarithmic amortized time. The <em>min</em>, <em>size</em>, and
+ * <em>is-empty</em> operations take constant time. Construction takes time
+ * proportional to the specified capacity or the number of items used to
  * initialize the data structure.
  * <p>
  * This implementation uses a binary heap.
  * <p>
- * For additional documentation, see <a href="http://algs4.cs.princeton.edu/24pq">Section 2.4</a> of
- * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a
+ * href="http://algs4.cs.princeton.edu/24pq">Section 2.4</a> of <i>Algorithms,
+ * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
 public class MinPQ<Key> implements Iterable<Key> {
 
-    private Key[] pq;                    // store items at indices 1 to N
-    private int N;                       // number of items on priority queue
-    private Comparator<Key> comparator;  // optional comparator
+    private Key[] pq; // store items at indices 1 to N
+    private int N; // number of items on priority queue
+    private Comparator<Key> comparator; // optional comparator
 
     /**
      * Create an empty priority queue with the given initial capacity.
@@ -51,7 +56,8 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Create an empty priority queue with the given initial capacity, using the given comparator.
+     * Create an empty priority queue with the given initial capacity, using the
+     * given comparator.
      */
     public MinPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
@@ -67,7 +73,8 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Create a priority queue with the given items. Takes time proportional to the number of items using sink-based heap construction.
+     * Create a priority queue with the given items. Takes time proportional to
+     * the number of items using sink-based heap construction.
      */
     public MinPQ(Key[] keys) {
         N = keys.length;
@@ -97,8 +104,9 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Return the smallest key on the priority queue.
-     *
-     * @throws java.util.NoSuchElementException if priority queue is empty.
+     * 
+     * @throws java.util.NoSuchElementException
+     *             if priority queue is empty.
      */
     public Key min() {
         if (isEmpty()) {
@@ -134,8 +142,9 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Delete and return the smallest key on the priority queue.
-     *
-     * @throws java.util.NoSuchElementException if priority queue is empty.
+     * 
+     * @throws java.util.NoSuchElementException
+     *             if priority queue is empty.
      */
     public Key delMin() {
         if (isEmpty()) {
@@ -144,7 +153,7 @@ public class MinPQ<Key> implements Iterable<Key> {
         exch(1, N);
         Key min = pq[N--];
         sink(1);
-        pq[N + 1] = null;         // avoid loitering and help with garbage collection
+        pq[N + 1] = null; // avoid loitering and help with garbage collection
         if ((N > 0) && (N == (pq.length - 1) / 4)) {
             resize(pq.length / 2);
         }
@@ -170,7 +179,8 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * *********************************************************************
-     * Helper functions to restore the heap invariant. ********************************************************************
+     * Helper functions to restore the heap invariant.
+     * ********************************************************************
      */
     private void swim(int k) {
         while (k > 1 && greater(k / 2, k)) {
@@ -195,7 +205,8 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * *********************************************************************
-     * Helper functions for compares and swaps. ********************************************************************
+     * Helper functions for compares and swaps.
+     * ********************************************************************
      */
     private boolean greater(int i, int j) {
         if (comparator == null) {
@@ -241,10 +252,12 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * *********************************************************************
-     * Iterators ********************************************************************
+     * Iterators
+     * ********************************************************************
      */
     /**
-     * Return an iterator that iterates over all of the keys on the priority queue in ascending order.
+     * Return an iterator that iterates over all of the keys on the priority
+     * queue in ascending order.
      * <p>
      * The iterator doesn't implement <tt>remove()</tt> since it's optional.
      */

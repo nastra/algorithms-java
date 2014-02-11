@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class CallHandler {
@@ -41,8 +41,9 @@ public class CallHandler {
     }
 
     /**
-     * we need to find the next possible call handler and assign the call to that person.
-     *
+     * we need to find the next possible call handler and assign the call to
+     * that person.
+     * 
      * @param call
      */
     private static void dispatchCall(Call call) {

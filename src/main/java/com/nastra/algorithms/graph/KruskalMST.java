@@ -9,7 +9,7 @@ import java.util.Queue;
 
 /**
  * Implements Kruskal's minimum spanning tree algorithm.
- *
+ * 
  * @author nastra
  */
 public class KruskalMST {

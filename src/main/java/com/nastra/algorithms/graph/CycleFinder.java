@@ -5,7 +5,7 @@ import java.util.Stack;
 
 /**
  * Uses depth-first search to detect cycles in a directed graph
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class CycleFinder {

@@ -1,15 +1,17 @@
 package com.nastra.algorithms.search;
 
 /**
- * Further details to the Longest Increasing Subsequence problem can be found at http://en.wikipedia.org/wiki/Longest_increasing_subsequence
- *
+ * Further details to the Longest Increasing Subsequence problem can be found at
+ * http://en.wikipedia.org/wiki/Longest_increasing_subsequence
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class LongestIncreasingSubsequence {
 
     /**
-     * Algorithm runs in time O(n log n). The longest subsequence in {10, 22, 9, 33, 21, 50, 41, 60} has the length=5, having {10, 22, 33, 50, 60}
-     *
+     * Algorithm runs in time O(n log n). The longest subsequence in {10, 22, 9,
+     * 33, 21, 50, 41, 60} has the length=5, having {10, 22, 33, 50, 60}
+     * 
      * @param s
      * @return The length of the longest increasing subsequence
      */
@@ -33,7 +35,8 @@ public class LongestIncreasingSubsequence {
                 tail[len] = s[i];
                 len++;
             } else {
-                // element is somewhere in between, replace it with a ceil element
+                // element is somewhere in between, replace it with a ceil
+                // element
                 int index = ArraySearch.ceil(tail, s[i], 0, len);
                 tail[index] = s[i];
             }
@@ -42,8 +45,10 @@ public class LongestIncreasingSubsequence {
     }
 
     /**
-     * This algorithm is slower than {@link LongestIncreasingSubsequence#longestIncreasingSubsequenceLength(int[])}. It runs in time O(n^2).
-     *
+     * This algorithm is slower than
+     * {@link LongestIncreasingSubsequence#longestIncreasingSubsequenceLength(int[])}
+     * . It runs in time O(n^2).
+     * 
      * @param s
      * @return The length of the longest increasing subsequence.
      */

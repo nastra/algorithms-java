@@ -3,12 +3,15 @@ package com.nastra.algorithms.stack;
 import java.util.Stack;
 
 /**
- * A rudimentary implementation to translate from infix to postfix expressions. Currently the input is not checked for correctness and only the following things are supported for now:
- * <br>- single digit operands are supported
- * <br>- The operators<br>
- *
- * So basically we can translate "A*B-(C*D)+E" to "AB*CD*-E+" or "2+(3*4)-6" to its postfix representation "234*+6-"
- *
+ * A rudimentary implementation to translate from infix to postfix expressions.
+ * Currently the input is not checked for correctness and only the following
+ * things are supported for now: <br>
+ * - single digit operands are supported <br>
+ * - The operators<br>
+ * 
+ * So basically we can translate "A*B-(C*D)+E" to "AB*CD*-E+" or "2+(3*4)-6" to
+ * its postfix representation "234*+6-"
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class InfixToPostfixTranslator {
@@ -61,7 +64,8 @@ public class InfixToPostfixTranslator {
     }
 
     private static boolean isOperator(char current) {
-        return Operator.PLUS.operator == current || Operator.MINUS.operator == current || Operator.MULTIPLY.operator == current || Operator.DIVIDE.operator == current;
+        return Operator.PLUS.operator == current || Operator.MINUS.operator == current || Operator.MULTIPLY.operator == current
+                || Operator.DIVIDE.operator == current;
     }
 
     private static boolean higherOrEqualOperatorOnStack(Stack<Character> stack, char current) {

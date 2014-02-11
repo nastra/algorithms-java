@@ -3,7 +3,7 @@ package com.nastra.algorithms.search;
 import java.util.Arrays;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class SuffixArray {
@@ -28,7 +28,7 @@ public class SuffixArray {
     }
 
     /**
-     *
+     * 
      * @param key
      * @return The number of suffixes less than key
      */
@@ -58,7 +58,7 @@ public class SuffixArray {
     }
 
     /**
-     *
+     * 
      * @param i
      * @return The ith suffix in the suffix array
      */

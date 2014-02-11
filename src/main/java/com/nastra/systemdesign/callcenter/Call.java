@@ -1,7 +1,7 @@
 package com.nastra.systemdesign.callcenter;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class Call {

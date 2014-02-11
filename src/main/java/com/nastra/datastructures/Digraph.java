@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * Represents a directed graph
- *
+ * 
  * @author nastra
  */
 public class Digraph {

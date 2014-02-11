@@ -1,7 +1,7 @@
 package com.nastra.datastructures;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class TreeNode<T> {

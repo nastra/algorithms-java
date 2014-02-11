@@ -2,7 +2,7 @@ package com.nastra.datastructures;
 
 /**
  * Represents an Edge with a given weight in a graph.
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Edge implements Comparable<Edge> {

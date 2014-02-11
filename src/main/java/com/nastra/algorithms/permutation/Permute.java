@@ -7,10 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * WARNING: Don't make n too large.
- * <br>Recall that the number of permutations is n! which can be very large, even when n is as small as 20
- * <br>20! = 2,432,902,008,176,640,000 and 21! is too big to fit into a Java long
- *
+ * WARNING: Don't make n too large. <br>
+ * Recall that the number of permutations is n! which can be very large, even
+ * when n is as small as 20 <br>
+ * 20! = 2,432,902,008,176,640,000 and 21! is too big to fit into a Java long
+ * 
  * @author nastra
  */
 public class Permute {
@@ -22,10 +23,12 @@ public class Permute {
     }
 
     /**
-     * Generates all permutations of a given string. This solution uses recursion and runs in time O(n!). Due to its recursive nature, this solution
-     * is quite memory-inefficient.
-     *
-     * @param input The input to permute.
+     * Generates all permutations of a given string. This solution uses
+     * recursion and runs in time O(n!). Due to its recursive nature, this
+     * solution is quite memory-inefficient.
+     * 
+     * @param input
+     *            The input to permute.
      * @return A list of all permutations of the given input.
      */
     public static List<String> permute(String input) {
@@ -77,7 +80,7 @@ public class Permute {
 
         public static void permute(char[] str, int start, int end) {
             if (start == end) {
-//                System.out.println(str);
+                // System.out.println(str);
                 permutations.add(new String(str));
             } else {
                 for (int i = start; i <= end; i++) {

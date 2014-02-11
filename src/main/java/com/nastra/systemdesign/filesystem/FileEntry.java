@@ -3,7 +3,7 @@ package com.nastra.systemdesign.filesystem;
 import java.sql.Timestamp;
 
 /**
- *
+ * 
  * @author nastra
  */
 public abstract class FileEntry {

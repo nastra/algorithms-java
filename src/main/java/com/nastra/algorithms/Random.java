@@ -1,7 +1,7 @@
 package com.nastra.algorithms;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class Random {

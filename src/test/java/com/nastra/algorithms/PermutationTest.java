@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class PermutationTest {
@@ -45,22 +45,23 @@ public class PermutationTest {
         long expectedSize = Factorial.factorial(input.length());
         Assert.assertTrue(permutations.size() == expectedSize);
     }
-//    @Test
-//    public void testPermutationsLong() {
-//        String input = "cdefghmnopqrstuvw";
-//        long expectedSize = Factorial.factorial(input.length());
-//        Permute.Permuter.permute(input);
-//        Assert.assertTrue(Permute.Permuter.permutations.size() == expectedSize);
-//    }
-//
-//    @Test
-//    public void testPermutationsVeryLong() {
-//        String input = "cdefghmnopqrstuvw";
-//        long expectedSize = Factorial.factorial(input.length());
-//        List<String> permutations = Permute.permute(input);
-//        Assert.assertTrue(permutations.size() == expectedSize);
-//    }
-//
+
+    // @Test
+    // public void testPermutationsLong() {
+    // String input = "cdefghmnopqrstuvw";
+    // long expectedSize = Factorial.factorial(input.length());
+    // Permute.Permuter.permute(input);
+    // Assert.assertTrue(Permute.Permuter.permutations.size() == expectedSize);
+    // }
+    //
+    // @Test
+    // public void testPermutationsVeryLong() {
+    // String input = "cdefghmnopqrstuvw";
+    // long expectedSize = Factorial.factorial(input.length());
+    // List<String> permutations = Permute.permute(input);
+    // Assert.assertTrue(permutations.size() == expectedSize);
+    // }
+    //
 
     @Test
     public void testPermutationsShort() {

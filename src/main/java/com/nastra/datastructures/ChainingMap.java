@@ -2,7 +2,7 @@ package com.nastra.datastructures;
 
 /**
  * A basic hash map that uses chaining for colliding hashes
- *
+ * 
  * @author nastra
  */
 public class ChainingMap<K, V> {

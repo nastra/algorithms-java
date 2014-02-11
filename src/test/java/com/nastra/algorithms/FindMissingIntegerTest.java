@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class FindMissingIntegerTest {
@@ -20,7 +20,7 @@ public class FindMissingIntegerTest {
         Random random = new Random();
         int expectedMissingValue = random.nextInt(100000);
         for (int i = 0; i < 100000; i++) {
-//            int randInt = random.nextInt(Integer.MAX_VALUE);
+            // int randInt = random.nextInt(Integer.MAX_VALUE);
             if (i != expectedMissingValue) {
                 numbers.add(i);
             }

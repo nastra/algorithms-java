@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class ParenthesesCheckerTest {

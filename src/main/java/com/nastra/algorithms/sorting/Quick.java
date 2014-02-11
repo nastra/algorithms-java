@@ -7,7 +7,7 @@ package com.nastra.algorithms.sorting;
 import com.nastra.algorithms.Random;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class Quick {
@@ -18,12 +18,12 @@ public class Quick {
         }
 
         randomizedSort(in, 0, in.length - 1);
-//        sort(in, 0, in.length - 1);
+        // sort(in, 0, in.length - 1);
     }
 
     /**
      * This version of the quicksort algorithm uses randomized partitioning
-     *
+     * 
      * @param in
      * @param low
      * @param high
@@ -40,7 +40,7 @@ public class Quick {
 
     /**
      * This version of sort uses the book-like quicksort implementation.
-     *
+     * 
      * @param in
      * @param low
      * @param high
@@ -70,7 +70,7 @@ public class Quick {
     }
 
     /**
-     *
+     * 
      * @param in
      * @param low
      * @param high

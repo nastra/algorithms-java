@@ -1,21 +1,26 @@
 package com.nastra.algorithms;
 
 /**
- * Given two character strings str1 and str2, the edit distance between them is the minimum number of edit operations required to transform str1 into
- * str2. Most commonly, the edit operations allowed for this purpose are: (i) insert a character into a string; (ii) delete a character from a string
- * and (iii) replace a character of a string by another character; for these operations, edit distance is sometimes known as Levenshtein distance .
- * For example, the edit distance between cat and dog is 3.
- *
+ * Given two character strings str1 and str2, the edit distance between them is
+ * the minimum number of edit operations required to transform str1 into str2.
+ * Most commonly, the edit operations allowed for this purpose are: (i) insert a
+ * character into a string; (ii) delete a character from a string and (iii)
+ * replace a character of a string by another character; for these operations,
+ * edit distance is sometimes known as Levenshtein distance . For example, the
+ * edit distance between cat and dog is 3.
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class LevenshteinDistance {
 
     /**
-     * Runs in time O(n*m) where n is the length of the first string and m is the length of the second string. Also requires O(n*m) of space.
-     *
+     * Runs in time O(n*m) where n is the length of the first string and m is
+     * the length of the second string. Also requires O(n*m) of space.
+     * 
      * @param str1
      * @param str2
-     * @return The minimum number of edit operations required to transform the first string into the second string.
+     * @return The minimum number of edit operations required to transform the
+     *         first string into the second string.
      */
     public static int computeDistance(char[] str1, char[] str2) {
         if (str1.length == 0) {

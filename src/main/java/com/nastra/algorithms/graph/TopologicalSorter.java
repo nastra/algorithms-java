@@ -4,7 +4,7 @@ import com.nastra.datastructures.Digraph;
 
 /**
  * Allows to find a topological order for a given directed graph
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class TopologicalSorter {

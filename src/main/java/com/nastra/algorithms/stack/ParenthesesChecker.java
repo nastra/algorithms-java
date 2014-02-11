@@ -4,9 +4,10 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 /**
- * Give an algorithm that returns true if a string contains properly nested and balanced parentheses, and false otherwise. For example, the string
+ * Give an algorithm that returns true if a string contains properly nested and
+ * balanced parentheses, and false otherwise. For example, the string
  * "((())())()" contains properly nested pairs, whereas ")()(" and "())" do not.
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class ParenthesesChecker {

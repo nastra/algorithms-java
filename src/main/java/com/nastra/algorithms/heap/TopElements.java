@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /**
- * Retrieves the top k elements in increasing order from a given list in an efficient way by using a priority queue. Its running time is O(n log k). If the top k elements are not required to be in
- * sorted order, then we use a selection-based approach.
- *
+ * Retrieves the top k elements in increasing order from a given list in an
+ * efficient way by using a priority queue. Its running time is O(n log k). If
+ * the top k elements are not required to be in sorted order, then we use a
+ * selection-based approach.
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class TopElements {
@@ -20,8 +22,9 @@ public class TopElements {
     }
 
     /**
-     * We use an approach based on a binary heap (priority queue) to retrieve the top k elements in sorted order.
-     *
+     * We use an approach based on a binary heap (priority queue) to retrieve
+     * the top k elements in sorted order.
+     * 
      * @param <T>
      * @param unsortedInput
      * @param topElements
@@ -48,7 +51,7 @@ public class TopElements {
 
     /**
      * We use a selection-based approach here to retrieve the top k elements.
-     *
+     * 
      * @param <T>
      * @param unsortedInput
      * @param topElements

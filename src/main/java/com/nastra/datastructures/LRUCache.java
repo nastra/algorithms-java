@@ -9,11 +9,12 @@ import java.util.Set;
 
 /**
  * A very simple implementation of a LRU (least recently used) cache. <br>
- * The implementation of the cache is synchronized by using {@link Collections#synchronizedMap(java.util.Map)}. It uses almost the same interface as
- * {@link Map}.
- * <br>
- * This is the solution to the following interview question: "How would you design a LRU cache?"
- *
+ * The implementation of the cache is synchronized by using
+ * {@link Collections#synchronizedMap(java.util.Map)}. It uses almost the same
+ * interface as {@link Map}. <br>
+ * This is the solution to the following interview question:
+ * "How would you design a LRU cache?"
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class LRUCache<K, V> {

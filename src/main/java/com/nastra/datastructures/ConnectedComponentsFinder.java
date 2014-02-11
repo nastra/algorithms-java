@@ -2,7 +2,7 @@ package com.nastra.datastructures;
 
 /**
  * Uses DFS to find connected components in a graph.
- *
+ * 
  * @author nastra
  */
 public class ConnectedComponentsFinder {

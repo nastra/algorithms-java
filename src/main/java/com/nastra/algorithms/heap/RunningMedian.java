@@ -3,12 +3,13 @@ package com.nastra.algorithms.heap;
 import com.nastra.datastructures.MedianHeap;
 
 /**
- * Solution to the following interview question: "Design an algorithm to compute the running median of a sequence."
- *
+ * Solution to the following interview question:
+ * "Design an algorithm to compute the running median of a sequence."
+ * 
  * <br>
  * <br>
  * The running time of this algorithm is O(n log n).
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class RunningMedian {

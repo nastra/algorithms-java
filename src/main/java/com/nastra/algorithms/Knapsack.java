@@ -1,9 +1,9 @@
 package com.nastra.algorithms;
 
 /**
- * Solves the 0/1 Knapsack problem using Dynamic Programming. Complexity O(cN), where c is the max capacity of the pack, and N is the total number of
- * items
- *
+ * Solves the 0/1 Knapsack problem using Dynamic Programming. Complexity O(cN),
+ * where c is the max capacity of the pack, and N is the total number of items
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Knapsack {

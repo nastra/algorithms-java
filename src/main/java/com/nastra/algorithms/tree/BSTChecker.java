@@ -3,7 +3,7 @@ package com.nastra.algorithms.tree;
 import com.nastra.datastructures.TreeNode;
 
 /**
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class BSTChecker {
@@ -14,8 +14,9 @@ public class BSTChecker {
 
     /**
      * Algorithm runs in O(n).
-     *
-     * @param n The current node.
+     * 
+     * @param n
+     *            The current node.
      * @param min
      * @param max
      * @return True, if the tree is a binary search tree.

@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class QueueWithMaxTest {

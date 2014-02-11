@@ -3,17 +3,20 @@ package com.nastra.algorithms.stack;
 import java.util.Stack;
 
 /**
- * Solution to the following interview question: "Sort a stack of numbers in descending order. The following operations are allowed:
+ * Solution to the following interview question: "Sort a stack of numbers in
+ * descending order. The following operations are allowed:
  * push/pop/top/isEmpty."
- *
+ * 
  * @author nastra
  */
 public class StackSorter {
 
     /**
-     * Sorts a stack without using additional data structures. Requires O(n^2) time and O(n) space.
-     *
-     * @param stack The stack to be sorted
+     * Sorts a stack without using additional data structures. Requires O(n^2)
+     * time and O(n) space.
+     * 
+     * @param stack
+     *            The stack to be sorted
      */
     public static void sort(Stack<Integer> stack) {
         if (null == stack) {

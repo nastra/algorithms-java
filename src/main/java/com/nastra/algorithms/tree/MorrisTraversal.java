@@ -3,9 +3,9 @@ package com.nastra.algorithms.tree;
 import java.util.List;
 
 /**
- * Solution to the following interview question:
- * <br>"Traverse a tree without using recursion or any other helper data structures."
- *
+ * Solution to the following interview question: <br>
+ * "Traverse a tree without using recursion or any other helper data structures."
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class MorrisTraversal<T> {
@@ -32,10 +32,13 @@ public class MorrisTraversal<T> {
     }
 
     /**
-     * Traverses a tree without using recursion or any other helper data structures
-     *
-     * @param root The root of the tree
-     * @param values The list where to store the traversed values of the tree.
+     * Traverses a tree without using recursion or any other helper data
+     * structures
+     * 
+     * @param root
+     *            The root of the tree
+     * @param values
+     *            The list where to store the traversed values of the tree.
      */
     public void traverse(Node root, List<T> values) {
         Node<T> current = root;
