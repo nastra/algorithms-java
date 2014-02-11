@@ -7,8 +7,7 @@ import java.util.Stack;
 public class ConvexHull {
 
     /**
-     * Algorithm runs in time O(N log N) and is dominated by sorting all the
-     * points.
+     * Algorithm runs in time O(N log N) and is dominated by sorting all the points.
      * 
      * @param points
      *            All the points
@@ -66,8 +65,7 @@ public class ConvexHull {
         static final Comparator<Point> Y_ORDER = new YOrder();
 
         /**
-         * Compares two points by polar angle (between 0 and 2pi) with respect
-         * to this point.
+         * Compares two points by polar angle (between 0 and 2pi) with respect to this point.
          */
         final Comparator<Point> POLAR_ORDER = new PolarOrder();
 
@@ -86,8 +84,7 @@ public class ConvexHull {
          *            second point
          * @param c
          *            third point
-         * @return { -1, 0, +1 } if a->b->c is a { clockwise, collinear;
-         *         counterclocwise } turn.
+         * @return { -1, 0, +1 } if a->b->c is a { clockwise, collinear; counterclocwise } turn.
          */
         public static int ccw(Point a, Point b, Point c) {
             double area2 = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
@@ -118,13 +115,11 @@ public class ConvexHull {
         }
 
         /**
-         * Returns the square of the Euclidean distance between this point and
-         * that point.
+         * Returns the square of the Euclidean distance between this point and that point.
          * 
          * @param that
          *            the other point
-         * @return the square of the Euclidean distance between this point and
-         *         that point
+         * @return the square of the Euclidean distance between this point and that point
          */
         public double distanceSquaredTo(Point that) {
             double dx = this.x - that.x;
@@ -133,13 +128,11 @@ public class ConvexHull {
         }
 
         /**
-         * Compares this point to that point by y-coordinate, breaking ties by
-         * x-coordinate.
+         * Compares this point to that point by y-coordinate, breaking ties by x-coordinate.
          * 
          * @param that
          *            the other point
-         * @return { a negative integer, zero, a positive integer } if this
-         *         point is { less than, equal to, greater than } that point
+         * @return { a negative integer, zero, a positive integer } if this point is { less than, equal to, greater than } that point
          */
         public int compareTo(Point that) {
             if (this.y < that.y)

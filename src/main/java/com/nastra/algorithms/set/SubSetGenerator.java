@@ -6,12 +6,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * This class provides different implementations to generate all subsets of a
- * given set. <br>
- * There are 2^n distinct subsets of an n-element set, including the empty set
- * as well as the set itself. <br>
- * So for example, the eight subsets of {1, 2, 3} are {{}, {1}, {2}, {3}, {1,
- * 2}, {1, 3}, {2, 3}, {1, 2, 3}}
+ * This class provides different implementations to generate all subsets of a given set. <br>
+ * There are 2^n distinct subsets of an n-element set, including the empty set as well as the set itself. <br>
+ * So for example, the eight subsets of {1, 2, 3} are {{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}
  * 
  * @author nastra
  */

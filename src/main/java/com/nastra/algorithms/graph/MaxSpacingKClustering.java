@@ -8,8 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Problem statement is as following: Given a distance measure d and k, compute
- * the k-clustering with maximum spacing
+ * Problem statement is as following: Given a distance measure d and k, compute the k-clustering with maximum spacing
  * 
  * @author nastra - Eduard Tudenhoefner
  */

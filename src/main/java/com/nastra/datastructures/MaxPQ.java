@@ -18,22 +18,17 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * The <tt>MaxPQ</tt> class represents a priority queue of generic keys. It
- * supports the usual <em>insert</em> and <em>delete-the-maximum</em>
- * operations, along with methods for peeking at the maximum key, testing if the
- * priority queue is empty, and iterating through the keys.
+ * The <tt>MaxPQ</tt> class represents a priority queue of generic keys. It supports the usual <em>insert</em> and <em>delete-the-maximum</em>
+ * operations, along with methods for peeking at the maximum key, testing if the priority queue is empty, and iterating through the keys.
  * <p>
- * The <em>insert</em> and <em>delete-the-maximum</em> operations take
- * logarithmic amortized time. The <em>max</em>, <em>size</em>, and
- * <em>is-empty</em> operations take constant time. Construction takes time
- * proportional to the specified capacity or the number of items used to
+ * The <em>insert</em> and <em>delete-the-maximum</em> operations take logarithmic amortized time. The <em>max</em>, <em>size</em>, and
+ * <em>is-empty</em> operations take constant time. Construction takes time proportional to the specified capacity or the number of items used to
  * initialize the data structure.
  * <p>
  * This implementation uses a binary heap.
  * <p>
- * For additional documentation, see <a
- * href="http://algs4.cs.princeton.edu/24pq">Section 2.4</a> of <i>Algorithms,
- * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="http://algs4.cs.princeton.edu/24pq">Section 2.4</a> of <i>Algorithms, 4th Edition</i> by Robert
+ * Sedgewick and Kevin Wayne.
  */
 public class MaxPQ<Key> implements Iterable<Key> {
 
@@ -57,8 +52,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Create an empty priority queue with the given initial capacity, using the
-     * given comparator.
+     * Create an empty priority queue with the given initial capacity, using the given comparator.
      */
     public MaxPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
@@ -74,8 +68,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Create a priority queue with the given items. Takes time proportional to
-     * the number of items using sink-based heap construction.
+     * Create a priority queue with the given items. Takes time proportional to the number of items using sink-based heap construction.
      */
     public MaxPQ(Key[] keys) {
         N = keys.length;
@@ -180,8 +173,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * *********************************************************************
-     * Helper functions to restore the heap invariant.
+     * ********************************************************************* Helper functions to restore the heap invariant.
      * ********************************************************************
      */
     private void swim(int k) {
@@ -206,8 +198,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * *********************************************************************
-     * Helper functions for compares and swaps.
+     * ********************************************************************* Helper functions for compares and swaps.
      * ********************************************************************
      */
     private boolean less(int i, int j) {
@@ -253,13 +244,11 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * *********************************************************************
-     * Iterator
+     * ********************************************************************* Iterator
      * ********************************************************************
      */
     /**
-     * Return an iterator that iterates over all of the keys on the priority
-     * queue in descending order.
+     * Return an iterator that iterates over all of the keys on the priority queue in descending order.
      * <p>
      * The iterator doesn't implement <tt>remove()</tt> since it's optional.
      */

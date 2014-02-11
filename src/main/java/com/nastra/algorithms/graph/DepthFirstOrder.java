@@ -6,8 +6,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
- * This class uses depth-first search and allows clients to iterate in different
- * orders through the verticesCount of a graph.
+ * This class uses depth-first search and allows clients to iterate in different orders through the verticesCount of a graph.
  * 
  * @author nastra - Eduard Tudenhoefner
  */

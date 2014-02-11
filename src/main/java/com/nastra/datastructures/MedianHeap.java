@@ -4,8 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Implements a median heap that consists of a max and a min heap to keep track
- * of the running median.
+ * Implements a median heap that consists of a max and a min heap to keep track of the running median.
  * 
  * @author nastra - Eduard Tudenhoefner
  */

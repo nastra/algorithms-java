@@ -3,8 +3,7 @@ package com.nastra.algorithms.stack;
 import java.util.Stack;
 
 /**
- * Class that reverses a stack without using any additional space. The running
- * time is O(n^2) and the required space is O(n).<br>
+ * Class that reverses a stack without using any additional space. The running time is O(n^2) and the required space is O(n).<br>
  * This is the solution to the following interview question: <br>
  * "Reverse a stack without using extra space (recursion can be used)."
  * 

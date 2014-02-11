@@ -3,25 +3,19 @@ package com.nastra.algorithms.stack;
 import java.util.Stack;
 
 /**
- * Evaluates (fully parenthesized) arithmetic expressions using Dijkstra's
- * two-stack algorithm.
+ * Evaluates (fully parenthesized) arithmetic expressions using Dijkstra's two-stack algorithm.
  * 
- * % java ArithmeticExpressionEvaluator ( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) ) =>
- * 101.0
+ * % java ArithmeticExpressionEvaluator ( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) ) => 101.0
  * 
- * % java ArithmeticExpressionEvaluator ( ( 1 + sqrt ( 5 ) ) / 2.0 ) =>
- * 1.618033988749895
+ * % java ArithmeticExpressionEvaluator ( ( 1 + sqrt ( 5 ) ) / 2.0 ) => 1.618033988749895
  * 
  * 
  * 
- * Remarkably, Dijkstra's algorithm computes the same answer if we put each
- * operator *after* its two operands instead of *between* them.
+ * Remarkably, Dijkstra's algorithm computes the same answer if we put each operator *after* its two operands instead of *between* them.
  * 
- * % java ArithmeticExpressionEvaluator ( 1 ( ( 2 3 + ) ( 4 5 * ) * ) + ) =>
- * 101.0
+ * % java ArithmeticExpressionEvaluator ( 1 ( ( 2 3 + ) ( 4 5 * ) * ) + ) => 101.0
  * 
- * Moreover, in such expressions, all parentheses are redundant! Removing them
- * yields an expression known as a postfix expression.
+ * Moreover, in such expressions, all parentheses are redundant! Removing them yields an expression known as a postfix expression.
  * 
  * 1 2 3 + 4 5 * * +
  * 

@@ -9,11 +9,9 @@ import com.nastra.datastructures.ListNode;
 public class Power {
 
     /**
-     * Algorithm runs in O(log n) because we use the fact that base^exp can be
-     * expressed as (base^(exp/2))^2. If exp is even, then base^exp =
-     * (base^(exp/2))^2. If exp is odd, then base^exp = base * (base^(exp/2))^2.
-     * In either case, we halve the exponent for the cost of two multiplications
-     * and therefore the algorithm runs in logarithmic time.
+     * Algorithm runs in O(log n) because we use the fact that base^exp can be expressed as (base^(exp/2))^2. If exp is even, then base^exp =
+     * (base^(exp/2))^2. If exp is odd, then base^exp = base * (base^(exp/2))^2. In either case, we halve the exponent for the cost of two
+     * multiplications and therefore the algorithm runs in logarithmic time.
      * 
      * @param base
      * @param exp

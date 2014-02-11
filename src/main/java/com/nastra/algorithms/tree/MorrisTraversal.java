@@ -32,8 +32,7 @@ public class MorrisTraversal<T> {
     }
 
     /**
-     * Traverses a tree without using recursion or any other helper data
-     * structures
+     * Traverses a tree without using recursion or any other helper data structures
      * 
      * @param root
      *            The root of the tree

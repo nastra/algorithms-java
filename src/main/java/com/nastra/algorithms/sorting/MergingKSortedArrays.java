@@ -11,14 +11,12 @@ import java.util.List;
 public class MergingKSortedArrays {
 
     /**
-     * This algorithm runs in time O(n log k) where n is the number of items and
-     * k is the number of different arrays. The algorithm uses a min heap and
-     * requires requires O(k) space.
+     * This algorithm runs in time O(n log k) where n is the number of items and k is the number of different arrays. The algorithm uses a min heap
+     * and requires requires O(k) space.
      * 
      * @param <T>
      * @param input
-     *            A two-dimensional array consisting of k arrays where each
-     *            array in itself is sorted.
+     *            A two-dimensional array consisting of k arrays where each array in itself is sorted.
      * @return A list that merges all the arrays.
      */
     public static List<Integer> merge(int[][] input) {

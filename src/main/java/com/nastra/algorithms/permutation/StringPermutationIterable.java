@@ -8,8 +8,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * An implicit immutable collection of all permutations of a string with an
- * iterator over the permutations.
+ * An implicit immutable collection of all permutations of a string with an iterator over the permutations.
  * <p>
  * implements Iterable&ltString&gt
  * 

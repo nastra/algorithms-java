@@ -41,8 +41,7 @@ public class CallHandler {
     }
 
     /**
-     * we need to find the next possible call handler and assign the call to
-     * that person.
+     * we need to find the next possible call handler and assign the call to that person.
      * 
      * @param call
      */

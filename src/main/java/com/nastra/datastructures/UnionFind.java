@@ -12,17 +12,14 @@ package com.nastra.datastructures;
  ***************************************************************************
  */
 /**
- * The <tt>UF</tt> class represents a union-find data data structure. It
- * supports the <em>union</em> and <em>find</em> operations, along with a method
+ * The <tt>UF</tt> class represents a union-find data data structure. It supports the <em>union</em> and <em>find</em> operations, along with a method
  * for determining the number of disjoint sets.
  * <p>
- * This implementation uses weighted quick union. Creating a data structure with
- * N objects takes linear time. Afterwards, all operations are logarithmic
- * worst-case time.
+ * This implementation uses weighted quick union. Creating a data structure with N objects takes linear time. Afterwards, all operations are
+ * logarithmic worst-case time.
  * <p>
- * For additional documentation, see <a
- * href="http://algs4.cs.princeton.edu/15uf">Section 1.5</a> of <i>Algorithms,
- * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="http://algs4.cs.princeton.edu/15uf">Section 1.5</a> of <i>Algorithms, 4th Edition</i> by Robert
+ * Sedgewick and Kevin Wayne.
  */
 public class UnionFind {
 

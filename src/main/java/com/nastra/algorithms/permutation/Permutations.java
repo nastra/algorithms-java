@@ -4,11 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * This algorithm uses backtracking to generate all n! permutations of a given
- * string. <br>
+ * This algorithm uses backtracking to generate all n! permutations of a given string. <br>
  * WARNING: Don't make n too large. <br>
- * Recall that the number of permutations is n! which can be very large, even
- * when n is as small as 20 <br>
+ * Recall that the number of permutations is n! which can be very large, even when n is as small as 20 <br>
  * 20! = 2,432,902,008,176,640,000 and 21! is too big to fit into a Java long
  * 
  * @author nastra
