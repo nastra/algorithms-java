@@ -21,7 +21,7 @@ public class MergingKSortedArrays {
      */
     public static List<Integer> merge(int[][] input) {
         if (null == input || input.length == 0) {
-            return null;
+            return null; //
         }
         MinPQ<Item> heap = new MinPQ<Item>();
         for (int i = 0; i < input.length; i++) {

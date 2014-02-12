@@ -45,7 +45,6 @@ public class InfixToPostfixTranslator {
         while (!stack.isEmpty()) {
             out.append(stack.pop());
         }
-
         return out.toString();
     }
 
