@@ -103,10 +103,6 @@ public class Deque<Item> implements Iterable<Item> {
         return new DequeFirstToLastIterator();
     }
 
-    public static void main(String[] args) {
-
-    }
-
     private class DequeFirstToLastIterator implements Iterator<Item> {
         Node x = first;
 
