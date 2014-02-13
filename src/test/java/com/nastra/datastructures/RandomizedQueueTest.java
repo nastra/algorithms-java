@@ -58,7 +58,7 @@ public class RandomizedQueueTest {
         Integer[] items = {1, 3, 5, 7, 9, 11, 13, 15};
         Assert.assertTrue(q.size() == 0);
         Assert.assertTrue(q.isEmpty());
-        
+
         q.enqueue(items[r.nextInt(items.length)]);
         Assert.assertFalse(q.isEmpty());
         Assert.assertTrue(q.size() == 1);
@@ -81,6 +81,18 @@ public class RandomizedQueueTest {
         Assert.assertTrue(Arrays.binarySearch(items, x) >= 0);
         Assert.assertTrue(q.size() == 0);
         Assert.assertTrue(q.isEmpty());
+    }
+
+    @Test
+    public void testResizing() {
+        RandomizedQueue<Integer> q = new RandomizedQueue<Integer>();
+        for (int i = 0; i < 16; i++) {
+            q.enqueue(i);
+        }
+
+        for (int i = 0; i < 16; i++) {
+            q.dequeue();
+        }
     }
 
     @Test

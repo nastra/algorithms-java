@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
  * 
  */
 public class RandomizedQueue<Item> implements Iterable<Item> {
-    private int tail = 0;
+    private int size = 0;
     private Item[] q;
 
     @SuppressWarnings("unchecked")
@@ -19,40 +19,44 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     public boolean isEmpty() {
-        return tail == 0;
+        return size == 0;
     }
 
     public int size() {
-        return tail;
+        return size;
     }
 
     public void enqueue(Item item) {
         if (null == item) {
             throw new NullPointerException("Item must not be null!");
         }
-        if (tail == q.length) {
-            resize(q.length << 1);
+        if (size == q.length) {
+            resize(q.length * 2);
         }
-        q[tail++] = item;
+        q[size++] = item;
     }
 
     @SuppressWarnings("unchecked")
-    private void resize(int size) {
-        Item[] copy = (Item[]) new Object[size];
-        for (int i = 0; i < q.length; i++) {
-            copy[i] = q[i];
+    private void resize(int capacity) {
+        Item[] temp = (Item[]) new Object[capacity];
+        for (int i = 0; i < size; i++) {
+            temp[i] = q[i];
         }
-        q = copy;
+        q = temp;
     }
 
     public Item dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
-        tail--;
-        randomSwap(q, tail);
-        Item item = q[tail];
-        q[tail] = null;
+        if (size > 0 && size == q.length / 4) {
+            resize(q.length / 2);
+        }
+
+        size--;
+        randomSwap(q, size);
+        Item item = q[size];
+        q[size] = null;
         return item;
     }
 
@@ -60,8 +64,8 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
-        randomSwap(q, tail - 1);
-        Item item = q[tail - 1];
+        randomSwap(q, size - 1);
+        Item item = q[size - 1];
         return item;
     }
 
@@ -77,21 +81,29 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     private class RandomIterator implements Iterator<Item> {
-        Item[] copy = q;
-        int t = tail;
+        Item[] copy = null;
+        int curr = -1;
+
+        @SuppressWarnings("unchecked")
+        public RandomIterator() {
+            copy = (Item[]) new Object[size];
+            for (int i = 0; i < size; i++) {
+                copy[i] = q[i];
+            }
+            StdRandom.shuffle(copy);
+
+            curr = 0;
+        }
 
         public boolean hasNext() {
-            return t > 0;
+            return curr < copy.length;
         }
 
         public Item next() {
-            if (t == 0) {
+            if (curr == copy.length) {
                 throw new NoSuchElementException();
             }
-            t--;
-            randomSwap(copy, t);
-            Item item = copy[t];
-            copy[t] = null;
+            Item item = copy[curr++];
             return item;
         }
 
