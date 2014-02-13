@@ -49,6 +49,14 @@ public class DequeTest {
         Assert.assertTrue(x.equals(item));
         Assert.assertTrue(d.size() == 0);
         Assert.assertTrue(d.isEmpty());
+
+        d.addLast(item);
+        Assert.assertTrue(d.size() == 1);
+        Assert.assertFalse(d.isEmpty());
+        x = d.removeFirst();
+        Assert.assertTrue(x.equals(item));
+        Assert.assertTrue(d.size() == 0);
+        Assert.assertTrue(d.isEmpty());
     }
 
     @Test
@@ -114,6 +122,7 @@ public class DequeTest {
             Assert.assertEquals(reversed.get(i), item);
             i++;
         }
+        Assert.assertTrue(i == reversed.size());
     }
 
     @Test(expectedExceptions = NoSuchElementException.class)

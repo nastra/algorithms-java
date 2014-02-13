@@ -72,13 +72,15 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public Item removeFirst() {
-        if (null == first) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
         Node tmp = first;
         first = first.prev;
         if (null != first) {
             first.next = null;
+        } else {
+            first = last = null;
         }
         tmp.prev = null;
         size--;
@@ -86,13 +88,15 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public Item removeLast() {
-        if (null == first) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
         Node tmp = last;
         last = last.next;
         if (null != last) {
             last.prev = null;
+        } else {
+            first = last = null;
         }
         tmp.next = null;
         size--;
@@ -111,11 +115,11 @@ public class Deque<Item> implements Iterable<Item> {
         }
 
         public Item next() {
-            if (null == x) {
+            if (!hasNext()) {
                 throw new NoSuchElementException();
             }
             Item item = x.value;
-            x = x.next;
+            x = x.prev;
             return item;
         }
 
