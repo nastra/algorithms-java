@@ -46,26 +46,9 @@ public class PermutationTest {
         Assert.assertTrue(permutations.size() == expectedSize);
     }
 
-    // @Test
-    // public void testPermutationsLong() {
-    // String input = "cdefghmnopqrstuvw";
-    // long expectedSize = Factorial.factorial(input.length());
-    // Permute.Permuter.permute(input);
-    // Assert.assertTrue(Permute.Permuter.permutations.size() == expectedSize);
-    // }
-    //
-    // @Test
-    // public void testPermutationsVeryLong() {
-    // String input = "cdefghmnopqrstuvw";
-    // long expectedSize = Factorial.factorial(input.length());
-    // List<String> permutations = Permute.permute(input);
-    // Assert.assertTrue(permutations.size() == expectedSize);
-    // }
-    //
-
     @Test
     public void testPermutationsShort() {
-        String input = "cdcdcdcdeeeef";
+        String input = "cdcdeeeef";
         long expectedSize = Factorial.factorial(input.length());
         StringPermutationIterable p = new StringPermutationIterable(input);
         List<String> permutations = new ArrayList<String>();
