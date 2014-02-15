@@ -65,4 +65,28 @@ public class OrderStatistic {
         in[i] = in[j];
         in[j] = tmp;
     }
+
+    public static Integer selectIterative(int[] a, int k) {
+        if (null == a || a.length == 0) {
+            return null;
+        }
+        if (k < 0 || k >= a.length) {
+            return null;
+        }
+
+        int lo = 0;
+        int hi = a.length - 1;
+        while (lo < hi) {
+            int pivotIndex = randomizedPartition(a, lo, hi);
+
+            if (k < pivotIndex) {
+                hi = pivotIndex - 1;
+            } else if (k > pivotIndex) {
+                lo = pivotIndex + 1;
+            } else {
+                return a[k];
+            }
+        }
+        return a[k];
+    }
 }
