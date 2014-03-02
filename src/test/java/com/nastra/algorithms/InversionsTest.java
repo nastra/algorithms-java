@@ -1,15 +1,16 @@
 package com.nastra.algorithms;
 
-import com.nastra.algorithms.sorting.Inversions;
-import com.nastra.algorithms.sorting.Merge;
-import com.nastra.algorithms.sorting.SortUtil;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.nastra.algorithms.sorting.Inversions;
+import com.nastra.algorithms.sorting.Merge;
+import com.nastra.algorithms.sorting.SortUtil;
 
 /**
  * 
@@ -40,8 +41,8 @@ public class InversionsTest {
     @Test
     public void countInversionsInAReverseSortedArray() {
         Random rand = new Random();
-        Integer[] in = new Integer[100000];
-        for (int i = 0; i < 100000; i++) {
+        Integer[] in = new Integer[100002];
+        for (int i = 0; i < 100002; i++) {
             in[i] = rand.nextInt();
         }
         Merge.sort(in);

@@ -42,7 +42,7 @@ public class MergingKSortedArraysTest {
 
     private int[] generateSortedArrayWithRandomNumbers() {
         Random random = new Random();
-        int[] array = new int[random.nextInt(1000)];
+        int[] array = new int[1000];
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt();
         }
