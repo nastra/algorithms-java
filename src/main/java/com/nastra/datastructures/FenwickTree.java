@@ -31,12 +31,12 @@ public class FenwickTree {
      * @return The cumulative frequency from the first entry up to the entry at position idx
      */
     public int frequencyTo(int idx) {
-        int freq = 0;
+        int sum = 0;
         while (idx > 0) {
-            freq += tree[idx];
+            sum += tree[idx];
             idx -= (idx & -idx);
         }
-        return freq;
+        return sum;
     }
 
     /**
@@ -49,7 +49,7 @@ public class FenwickTree {
     }
 
     /**
-     * Updates the frequency at position idx to the new value given by val
+     * Updates the frequency from position idx up to the last position to the new value given by val
      * 
      * @param idx
      * @param val
