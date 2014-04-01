@@ -4,8 +4,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Represents the data structure for a graph with undirected edges. It maintains a vertex-indexed array of sets of undirected edges, which represent
+ * the adjacency lists.
  * 
- * @author nastra
+ * @author nastra - Eduard Tudenhoefner
  */
 public class EdgeWeightedGraph {
 
