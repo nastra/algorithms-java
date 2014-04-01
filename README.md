@@ -9,6 +9,7 @@ Graph Algorithms & Solutions:
 -----------------------------
 - Kruskal's Minimum Spanning Tree algorithm
 - Prim's Minimum Spanning Tree algorithm
+- Dijkstra's shortest path algorithm for directed graphs with non-negative weights
 - Algorithm that solves the max-spacing k clustering problem: "Given a distance measure d and k, compute the k-clustering with maximum spacing"
 - Algorithm that solves the interview question: "Design an efficient algorithm that takes as input a collection of equality and 
 inequality constraints and decides whether the constraints can be satisfied simultaneously."
