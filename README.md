@@ -16,6 +16,7 @@ inequality constraints and decides whether the constraints can be satisfied simu
 - Algorithm based on DFS that allows to iterate over a directed graph in different orders (preorder, postorder, reverse postorder)
 - Algorithm based on DFS to determine whether a directed graph contains a cycle. It also returns the entire path from source vertex to the cycle end
 - Algorithm to compute the topological ordering of a directed graph that is also a DAG
+- Algorithm that solves the "All-Pair-Shortest Path Problem"
 
 
 Sorting:
