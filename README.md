@@ -55,7 +55,7 @@ Searching:
 
 Data Structures:
 -----------------
-- A basic hash map that uses chaining for colliding hashes
+- A basic hash map that uses chaining for collision resolution
 - A connected component finder
 - Edge-weighted graph
 - Graph
@@ -63,7 +63,7 @@ Data Structures:
 - Least-recently-used cache (LRU cache)
 - MinHeap (MinPriorityQueue)
 - MaxHeap (MaxPriorityQueue)
-- A trie
+- Trie
 - The union-find data structure
 
 
