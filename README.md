@@ -65,6 +65,7 @@ Data Structures:
 - MaxHeap (MaxPriorityQueue)
 - Trie
 - The union-find data structure
+- A fenwick tree that supports point-queries and range updates in O(log n)
 
 
  
