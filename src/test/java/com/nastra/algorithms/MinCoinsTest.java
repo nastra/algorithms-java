@@ -3,6 +3,8 @@ package com.nastra.algorithms;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.nastra.algorithms.dp.MinCoins;
+
 public class MinCoinsTest {
 
     @Test

@@ -1,4 +1,4 @@
-package com.nastra.algorithms;
+package com.nastra.algorithms.dp;
 
 /**
  * Given a list of N coins, their values (V1, V2, … , VN), and the total sum S. Find the minimum number of coins the sum of which is S (we can use as
@@ -6,6 +6,7 @@ package com.nastra.algorithms;
  * 
  * Example: Given coins with values 1, 3, and 5. And the sum S is 11. Output: 3, 2 coins of 3 and 1 coin of 5
  * 
+ * @see http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
  * @author nastra
  * 
  */

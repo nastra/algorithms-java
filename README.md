@@ -68,5 +68,9 @@ Data Structures:
 - A fenwick tree that supports point-queries and range updates in O(log n)
 
 
- 
+Dynamic Programming
+-------------------
+- Rod Cutting
+- Subset Sum 
+- Min Coins 
 
