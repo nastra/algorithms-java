@@ -6,7 +6,6 @@ package com.nastra.algorithms.dp;
  * 
  * Example: Given coins with values 1, 3, and 5. And the sum S is 11. Output: 3, 2 coins of 3 and 1 coin of 5
  * 
- * @see http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
  * @author nastra
  * 
  */

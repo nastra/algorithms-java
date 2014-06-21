@@ -73,4 +73,5 @@ Dynamic Programming
 - Rod Cutting
 - Subset Sum 
 - Min Coins 
+- Coin Change
 
