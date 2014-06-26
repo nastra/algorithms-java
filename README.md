@@ -74,4 +74,8 @@ Dynamic Programming
 - Subset Sum 
 - Min Coins 
 - Coin Change
+- BinomiaelCoefficient
+- Edit Distance
+- Longest Increasing Subsequence
+
 
