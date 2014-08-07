@@ -66,6 +66,7 @@ Data Structures:
 - Trie
 - The union-find data structure
 - A fenwick tree that supports point-queries and range updates in O(log n)
+- A Segment tree that allows sum and update queries for a given range. All operations need at most O(log n).
 
 
 Dynamic Programming
