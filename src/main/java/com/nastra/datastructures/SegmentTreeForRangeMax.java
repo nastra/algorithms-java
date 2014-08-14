@@ -9,7 +9,6 @@ package com.nastra.datastructures;
  * 
  */
 public class SegmentTreeForRangeMax {
-    private int n;
     private int[] tree;
     private int startSegment;
     private int endSegment;
@@ -50,6 +49,12 @@ public class SegmentTreeForRangeMax {
         return node * 2 + 1;
     }
 
+    /**
+     * 
+     * @param queryStart
+     * @param queryEnd
+     * @return The max element within the given range as specified by queryStart and queryEnd
+     */
     public int getMax(int queryStart, int queryEnd) {
         if (queryStart < startSegment || queryEnd > endSegment || queryStart > queryEnd) {
             throw new IllegalArgumentException("The given interval is not valid!");
@@ -71,6 +76,16 @@ public class SegmentTreeForRangeMax {
         return Math.max(leftMax, rightMax);
     }
 
+    /**
+     * Sets a[updateAt] to newValue and updates the required intervals as necessary.
+     * 
+     * @param newValue
+     *            The new value
+     * @param updateAt
+     *            The position of the new value in the original array
+     * @param a
+     *            The original array holding the numbers.
+     */
     public void update(int newValue, int updateAt, int[] a) {
         int diff = newValue - a[updateAt];
         a[updateAt] = newValue;
@@ -93,6 +108,10 @@ public class SegmentTreeForRangeMax {
         }
 
         tree[node] = Math.max(tree[leftChild(node)], tree[rightChild(node)]);
+    }
+    
+    public void update(int queryStart, int queryEnd, int newValue) {
+        
     }
 
     public static void main(String[] args) {

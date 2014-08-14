@@ -37,23 +37,23 @@ public class SegmentTreeForRangeSum {
     public void update(int update, int updateAt, int[] a) {
         int diff = update - a[updateAt];
         a[updateAt] = update;
-        updateTreeUtil(startSeg, endSeg, updateAt, diff, root);
+        updateTree(startSeg, endSeg, updateAt, diff, root);
     }
 
     public void update(int oldValue, int newValue, int updateAt) {
         int diff = newValue - oldValue;
-        updateTreeUtil(startSeg, endSeg, updateAt, diff, root);
+        updateTree(startSeg, endSeg, updateAt, diff, root);
     }
 
-    private void updateTreeUtil(int segmentStart, int segmentEnd, int updateAt, int update, int index) {
+    private void updateTree(int segmentStart, int segmentEnd, int updateAt, int diff, int index) {
         if (updateAt < segmentStart || updateAt > segmentEnd) {
             return;
         }
-        tree[index] = tree[index] + update;
+        tree[index] = tree[index] + diff;
         if (segmentStart != segmentEnd) {
             int mid = mid(segmentStart, segmentEnd);
-            updateTreeUtil(segmentStart, mid, updateAt, update, leftChild(index));
-            updateTreeUtil(mid + 1, segmentEnd, updateAt, update, rightChild(index));
+            updateTree(segmentStart, mid, updateAt, diff, leftChild(index));
+            updateTree(mid + 1, segmentEnd, updateAt, diff, rightChild(index));
         }
     }
 
