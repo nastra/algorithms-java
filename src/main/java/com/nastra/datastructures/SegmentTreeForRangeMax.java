@@ -2,8 +2,9 @@ package com.nastra.datastructures;
 
 /**
  * Given an array A[1 ... m], you want to perform the following operations: <br>
- * <li>a) report maximum element in a range A[i ... j]</li><br>
- * <li>b) set A[i] = x.</li>
+ * <li>a) report maximum element in a range A[i...j]</li><br>
+ * <li>b) set A[i] = x.</li><br>
+ * <li>c) update range [i..j] by a given value</li>
  * 
  * @author nastra
  * 
@@ -109,9 +110,25 @@ public class SegmentTreeForRangeMax {
 
         tree[node] = Math.max(tree[leftChild(node)], tree[rightChild(node)]);
     }
-    
+
     public void update(int queryStart, int queryEnd, int newValue) {
-        
+        updateTree(startSegment, endSegment, queryStart, queryEnd, newValue, root);
+    }
+
+    private void updateTree(int start, int end, int queryStart, int queryEnd, int val, int node) {
+        if (start > end || start > queryEnd || end < queryStart) {
+            // Current segment is not within range [queryStart, queryEnd]
+            return;
+        }
+        if (start == end) {
+            // leaf node
+            tree[node] += val;
+            return;
+        }
+        int mid = mid(start, end);
+        updateTree(start, mid, queryStart, queryEnd, val, leftChild(node));
+        updateTree(mid + 1, end, queryStart, queryEnd, val, rightChild(node));
+        tree[node] = Math.max(tree[leftChild(node)], tree[rightChild(node)]);
     }
 
     public static void main(String[] args) {
@@ -127,19 +144,14 @@ public class SegmentTreeForRangeMax {
         System.out.println(s.getMax(6, 7));
         System.out.println(s.getMax(5, 7));
         System.out.println(s.getMax(0, 7));
-        System.out.println("updating...third element to 33");
-        s.update(33, 2, a);
-        System.out.println(s.getMax(0, 7));
-        System.out.println(s.getMax(0, 1));
-        System.out.println(s.getMax(0, 2));
+        System.out.println("..................");
+        int[] b = {1, 1, 1, 1, 1, 1, 1, 1};
+
+        s = new SegmentTreeForRangeMax(b);
+        s.update(4, b.length - 1, 5); // Increment range [4, n-1] by 5
         System.out.println(s.getMax(0, 3));
         System.out.println(s.getMax(0, 4));
-        System.out.println(s.getMax(0, 5));
-        System.out.println(s.getMax(0, 7));
-        System.out.println(s.getMax(6, 7));
-        System.out.println(s.getMax(5, 7));
-        System.out.println(s.getMax(2, 4));
-        System.out.println(s.getMax(4, 5));
+
     }
 
 }
