@@ -14,6 +14,7 @@ public class Graph {
     private int edgeCount;
     private Set<Integer>[] adjacent;
 
+    @SuppressWarnings("unchecked")
     public Graph(int vertices) {
         this.verticesCount = vertices;
         adjacent = new Set[vertices];

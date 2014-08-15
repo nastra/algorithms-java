@@ -12,7 +12,7 @@ import java.util.Queue;
  * 
  * @author nastra - Eduard Tudenhoefner
  */
-public class QueueWithMax<T extends Comparable> {
+public class QueueWithMax<T extends Comparable<T>> {
 
     private Deque<T> max;
     private Queue<T> queue;
@@ -44,10 +44,6 @@ public class QueueWithMax<T extends Comparable> {
 
     public T max() {
         return max.peekFirst();
-    }
-
-    private boolean lessThan(T one, T two) {
-        return one.compareTo(two) <= 0;
     }
 
     private boolean greaterThan(T one, T two) {

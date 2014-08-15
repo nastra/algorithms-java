@@ -16,6 +16,7 @@ public class Trie<T> {
     private class Node<T> {
 
         private T value;
+        @SuppressWarnings("rawtypes")
         private Node[] next = new Node[R];
     }
 

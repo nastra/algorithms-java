@@ -43,6 +43,7 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * @throws java.lang.IllegalArgumentException
      *             if NMAX < 0
      */
+    @SuppressWarnings("unchecked")
     public IndexMinPQ(int NMAX) {
         if (NMAX < 0)
             throw new IllegalArgumentException();

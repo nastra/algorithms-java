@@ -39,6 +39,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     /**
      * Create an empty priority queue with the given initial capacity.
      */
+    @SuppressWarnings("unchecked")
     public MaxPQ(int capacity) {
         pq = (Key[]) new Object[capacity + 1];
         N = 0;
@@ -54,6 +55,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     /**
      * Create an empty priority queue with the given initial capacity, using the given comparator.
      */
+    @SuppressWarnings("unchecked")
     public MaxPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
         pq = (Key[]) new Object[initCapacity + 1];
@@ -70,6 +72,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     /**
      * Create a priority queue with the given items. Takes time proportional to the number of items using sink-based heap construction.
      */
+    @SuppressWarnings("unchecked")
     public MaxPQ(Key[] keys) {
         N = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
@@ -110,6 +113,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     // helper function to double the size of the heap array
+    @SuppressWarnings("unchecked")
     private void resize(int capacity) {
         assert capacity > N;
         Key[] temp = (Key[]) new Object[capacity];
@@ -201,6 +205,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * ********************************************************************* Helper functions for compares and swaps.
      * ********************************************************************
      */
+    @SuppressWarnings("unchecked")
     private boolean less(int i, int j) {
         if (comparator == null) {
             return ((Comparable<Key>) pq[i]).compareTo(pq[j]) < 0;
@@ -209,6 +214,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private boolean less(Key i, Key j) {
         if (comparator == null) {
             return ((Comparable<Key>) i).compareTo(j) < 0;

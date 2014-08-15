@@ -17,10 +17,12 @@ import java.util.Set;
  */
 public class LRUCache<K, V> {
 
+    @SuppressWarnings("unused")
     private static final long serialVersionUID = 6377955652444051755L;
     private int size;
     private Map<K, V> cache;
 
+    @SuppressWarnings("serial")
     public LRUCache(int initialCapacity) {
         cache = Collections.synchronizedMap(new LinkedHashMap<K, V>(initialCapacity, 0.75f, true) {
             @Override

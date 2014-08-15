@@ -14,6 +14,7 @@ public class Digraph {
     private int edgeCount;
     private Set<Integer>[] adjacent;
 
+    @SuppressWarnings("unchecked")
     public Digraph(int verticesCount) {
         this.verticesCount = verticesCount;
         adjacent = new Set[verticesCount];

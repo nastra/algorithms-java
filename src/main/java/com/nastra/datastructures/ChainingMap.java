@@ -14,6 +14,7 @@ public class ChainingMap<K, V> {
         this(997);
     }
 
+    @SuppressWarnings("unchecked")
     public ChainingMap(int size) {
         this.size = size;
         table = new KeyValueList[size];

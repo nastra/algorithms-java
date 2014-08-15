@@ -19,6 +19,7 @@ public class KeyValueList<K, V> {
      * @param key
      * @param value
      */
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public void put(K key, V value) {
         if (null == head) {
             head = new KeyValueNode(key, value);

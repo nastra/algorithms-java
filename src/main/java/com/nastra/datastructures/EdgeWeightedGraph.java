@@ -15,6 +15,7 @@ public class EdgeWeightedGraph {
     private int edges;
     private Set<Edge>[] adjacent;
 
+    @SuppressWarnings("unchecked")
     public EdgeWeightedGraph(int vertices) {
         this.vertices = vertices;
         this.edges = 0;
