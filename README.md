@@ -68,6 +68,7 @@ Data Structures:
 - A fenwick tree that supports point-queries and range updates in O(log n)
 - A Segment tree that allows sum and update queries for a given range (class SegmentTreeForRangeSum). 
 - A Segment tree that allows max queries for a given range. It is also allowed to update a particular index position or it allows to update values within a given range (class SegmentTreeForRangeMax). 
+- A Segment tree that allows range updates and range max queries with lazy propagation (class SegmentTreeForRangeMaxLazyPropagation).
 
 
 Dynamic Programming
