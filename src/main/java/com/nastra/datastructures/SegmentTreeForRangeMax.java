@@ -132,6 +132,8 @@ public class SegmentTreeForRangeMax {
     }
 
     public static void main(String[] args) {
+        int[] x = {17, 3140, 832};
+        SegmentTreeForRangeMax t = new SegmentTreeForRangeMax(x);
         int[] a = {2, 5, 1, 4, 9, 3, 7, 6};
         SegmentTreeForRangeMax s = new SegmentTreeForRangeMax(a);
         System.out.println(s.getMax(0, 7));

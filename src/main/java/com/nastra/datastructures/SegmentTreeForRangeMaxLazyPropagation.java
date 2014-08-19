@@ -75,6 +75,7 @@ public class SegmentTreeForRangeMaxLazyPropagation {
                 lazy[leftChild(node)] += lazy[node];
                 lazy[rightChild(node)] += lazy[node];
             }
+            lazy[node] = 0;
         }
         if (queryStart <= start && queryEnd >= end) {
             return tree[node];
@@ -122,6 +123,8 @@ public class SegmentTreeForRangeMaxLazyPropagation {
     }
 
     public static void main(String[] args) {
+        int[] x = {17, 3140, 832};
+        SegmentTreeForRangeMaxLazyPropagation one = new SegmentTreeForRangeMaxLazyPropagation(x);
         int[] a = {2, 5, 1, 4, 9, 3, 7, 6};
         SegmentTreeForRangeMax s = new SegmentTreeForRangeMax(a);
         System.out.println(s.getMax(0, 7));
