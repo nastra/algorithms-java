@@ -101,6 +101,7 @@ public class IntervalTree {
         // Let us create interval tree shown in above figure
         Interval ints[] = {new Interval(15.0, 20.0), new Interval(10.0, 30.0), new Interval(17.0, 19.0), new Interval(5.0, 20.0),
                 new Interval(12.0, 15.0), new Interval(30.0, 40.0)};
+
         IntervalTree tree = new IntervalTree();
         for (int i = 0; i < ints.length; i++) {
             tree.insert(ints[i]);

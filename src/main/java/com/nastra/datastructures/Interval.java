@@ -1,5 +1,7 @@
 package com.nastra.datastructures;
 
+import java.util.Comparator;
+
 /**
  * Represents a one-dimensional closed interval
  * 
@@ -7,6 +9,22 @@ package com.nastra.datastructures;
  * 
  */
 public class Interval {
+
+    /**
+     * Compares two intervals by left endpoint.
+     */
+    public static final Comparator<Interval> LEFT_ENDPOINT_ORDER = new LeftComparator();
+
+    /**
+     * Compares two intervals by right endpoint.
+     */
+    public static final Comparator<Interval> RIGHT_ENDPOINT_ORDER = new RightComparator();
+
+    /**
+     * Compares two intervals by length.
+     */
+    public static final Comparator<Interval> LENGTH_ORDER = new LengthComparator();
+
     private double left;
     private double right;
 
@@ -81,6 +99,52 @@ public class Interval {
 
     public String toString() {
         return "[" + left + ", " + right + "]";
+    }
+
+    // ascending order of left endpoint, breaking ties by right endpoint
+    private static class LeftComparator implements Comparator<Interval> {
+        public int compare(Interval a, Interval b) {
+            if (a.left < b.left)
+                return -1;
+            else if (a.left > b.left)
+                return +1;
+            else if (a.right < b.right)
+                return -1;
+            else if (a.right > b.right)
+                return +1;
+            else
+                return 0;
+        }
+    }
+
+    // ascending order of right endpoint, breaking ties by left endpoint
+    private static class RightComparator implements Comparator<Interval> {
+        public int compare(Interval a, Interval b) {
+            if (a.right < b.right)
+                return -1;
+            else if (a.right > b.right)
+                return +1;
+            else if (a.left < b.left)
+                return -1;
+            else if (a.left > b.left)
+                return +1;
+            else
+                return 0;
+        }
+    }
+
+    // ascending order of length
+    private static class LengthComparator implements Comparator<Interval> {
+        public int compare(Interval a, Interval b) {
+            double alen = a.length();
+            double blen = b.length();
+            if (alen < blen)
+                return -1;
+            else if (alen > blen)
+                return +1;
+            else
+                return 0;
+        }
     }
 
 }
