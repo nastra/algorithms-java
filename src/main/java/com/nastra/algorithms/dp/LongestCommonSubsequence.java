@@ -1,5 +1,7 @@
 package com.nastra.algorithms.dp;
 
+import java.util.Arrays;
+
 /**
  * LCS Problem Statement: Given two sequences, find the length of longest subsequence present in both of them. A subsequence is a sequence that
  * appears in the same relative order, but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of
@@ -54,6 +56,11 @@ public class LongestCommonSubsequence {
         // no LSC
         System.out.println("Length of LCS is: " + lcs(a, b, a.length - 1, b.length - 1));
         System.out.println("Length of LCS using DP is: " + lcsDP(a, b, a.length - 1, b.length - 1));
+
+        String x = "abbabaab";
+        String y = "baababba";
+        System.out.println(lcsDP(a, b, a.length - 1, b.length - 1));
+        System.out.println(longest(x, y));
     }
 
     /**
@@ -91,5 +98,39 @@ public class LongestCommonSubsequence {
         }
 
         return lcs[m][n];
+    }
+
+    public static String longest(String x, String y) {
+        int M = x.length();
+        int N = y.length();
+
+        // opt[i][j] = length of LCS of x[i..M] and y[j..N]
+        int[][] opt = new int[M + 1][N + 1];
+
+        // compute length of LCS and all subproblems via dynamic programming
+        for (int i = M - 1; i >= 0; i--) {
+            for (int j = N - 1; j >= 0; j--) {
+                if (x.charAt(i) == y.charAt(j))
+                    opt[i][j] = opt[i + 1][j + 1] + 1;
+                else
+                    opt[i][j] = Math.max(opt[i + 1][j], opt[i][j + 1]);
+            }
+        }
+
+        // recover LCS itself and print it to standard output
+        String result = "";
+        int i = 0, j = 0;
+        while (i < M && j < N) {
+            if (x.charAt(i) == y.charAt(j)) {
+                result += x.charAt(i);
+                // System.out.print(x.charAt(i));
+                i++;
+                j++;
+            } else if (opt[i + 1][j] >= opt[i][j + 1])
+                i++;
+            else
+                j++;
+        }
+        return result;
     }
 }

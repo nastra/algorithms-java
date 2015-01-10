@@ -34,29 +34,6 @@ public class SegmentTreeForRangeSum {
         return startSegment + (endSegment - startSegment) / 2;
     }
 
-    public void update(int update, int updateAt, int[] a) {
-        int diff = update - a[updateAt];
-        a[updateAt] = update;
-        updateTree(startSeg, endSeg, updateAt, diff, root);
-    }
-
-    public void update(int oldValue, int newValue, int updateAt) {
-        int diff = newValue - oldValue;
-        updateTree(startSeg, endSeg, updateAt, diff, root);
-    }
-
-    private void updateTree(int segmentStart, int segmentEnd, int updateAt, int diff, int index) {
-        if (updateAt < segmentStart || updateAt > segmentEnd) {
-            return;
-        }
-        tree[index] = tree[index] + diff;
-        if (segmentStart != segmentEnd) {
-            int mid = mid(segmentStart, segmentEnd);
-            updateTree(segmentStart, mid, updateAt, diff, leftChild(index));
-            updateTree(mid + 1, segmentEnd, updateAt, diff, rightChild(index));
-        }
-    }
-
     public int getSum(int queryStart, int queryEnd) {
         // Check for erroneous input values
         if (queryStart < startSeg || queryEnd > endSeg || queryStart > queryEnd) {
@@ -106,14 +83,35 @@ public class SegmentTreeForRangeSum {
         return tree[index];
     }
 
+    public void update(int queryStart, int queryEnd, int newValue) {
+        updateTree(startSeg, endSeg, queryStart, queryEnd, newValue, root);
+    }
+
+    private void updateTree(int start, int end, int queryStart, int queryEnd, int val, int node) {
+        if (start > end || start > queryEnd || end < queryStart) {
+            // Current segment is not within range [queryStart, queryEnd]
+            return;
+        }
+        if (start == end) {
+            // leaf node
+            tree[node] += val;
+            return;
+        }
+        int mid = mid(start, end);
+        updateTree(start, mid, queryStart, queryEnd, val, leftChild(node));
+        updateTree(mid + 1, end, queryStart, queryEnd, val, rightChild(node));
+        tree[node] = Math.max(tree[leftChild(node)], tree[rightChild(node)]);
+    }
+
     public static void main(String[] args) {
         int arr[] = {2, 6, 9, 1, 3, 5};
         SegmentTreeForRangeSum t = new SegmentTreeForRangeSum(arr);
         System.out.println(Arrays.toString(t.tree));
         System.out.println(Arrays.toString(arr));
         System.out.println(t.getSum(1, 3));
-        t.update(-5, 2, arr);
-        t.update(5, 2, arr);
+        t.update(2, 2, 4);
+        // t.update(-5, 2, arr);
+        // t.update(5, 2, arr);
         System.out.println(t.getSum(1, 3));
         System.out.println(t.getSum(0, 2));
         System.out.println(t.getSum(0, 5));

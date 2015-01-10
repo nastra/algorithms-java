@@ -18,6 +18,13 @@ public class InfixToPostfixTranslator {
     private static final char LEFT_PARENTHESIS = '(';
     private static final char RIGHT_PARENTHESIS = ')';
 
+    public static void main(String... args) {
+        System.out.println(translate("(a+(b*c))"));
+        System.out.println(translate("((a+b)*(z+x))"));
+        System.out.println(translate("((a+t)*((b+(a+c))^(c+d)))"));
+
+    }
+
     public static String translate(String in) {
         if (null == in || in.isEmpty()) {
             return in;
@@ -62,7 +69,7 @@ public class InfixToPostfixTranslator {
 
     private static boolean isOperator(char current) {
         return Operator.PLUS.operator == current || Operator.MINUS.operator == current || Operator.MULTIPLY.operator == current
-                || Operator.DIVIDE.operator == current;
+                || Operator.DIVIDE.operator == current || current == Operator.XOR.operator;
     }
 
     private static boolean higherOrEqualOperatorOnStack(Stack<Character> stack, char current) {
@@ -72,29 +79,22 @@ public class InfixToPostfixTranslator {
     private static int precedenceOf(char operator) {
         if (operator == Operator.PLUS.operator || operator == Operator.MINUS.operator) {
             return Operator.PLUS.precedence;
-        } else if (operator == Operator.MULTIPLY.operator || operator == Operator.DIVIDE.operator) {
+        } else if (operator == Operator.MULTIPLY.operator || operator == Operator.DIVIDE.operator || operator == Operator.XOR.operator) {
             return Operator.MULTIPLY.precedence;
+
         }
         return 0;
     }
 
     private static enum Operator {
 
-        PLUS('+', 1), MINUS('-', 1), MULTIPLY('*', 2), DIVIDE('/', 2);
+        PLUS('+', 1), MINUS('-', 1), MULTIPLY('*', 2), DIVIDE('/', 2), XOR('^', 2);
         private char operator;
         private int precedence;
 
         private Operator(char operator, int precedence) {
             this.operator = operator;
             this.precedence = precedence;
-        }
-
-        public char getOperator() {
-            return operator;
-        }
-
-        public int getPrecedence() {
-            return precedence;
         }
     }
 }

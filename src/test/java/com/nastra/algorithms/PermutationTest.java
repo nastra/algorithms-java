@@ -1,12 +1,15 @@
 package com.nastra.algorithms;
 
-import com.nastra.algorithms.permutation.StringPermutationIterable;
-import com.nastra.algorithms.permutation.Permute;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.nastra.algorithms.permutation.Permute;
+import com.nastra.algorithms.permutation.Permute.Permuter;
+import com.nastra.algorithms.permutation.StringPermutationIterable;
 
 /**
  * 
@@ -58,5 +61,14 @@ public class PermutationTest {
             permutations.add(permutation);
         }
         Assert.assertTrue(permutations.size() == expectedSize);
+    }
+    
+    @Test
+    public void test() {
+        String in = "999999999";
+        Permute.Permuter.permute(in);
+//        List<String> out = Permute.Permuter.permutations;
+        List<String> out = Permute.permute(in);
+//        System.out.println(out);
     }
 }
