@@ -1,7 +1,7 @@
 package com.nastra.datastructures;
 
 /**
- * Represents a simple Interval Tree
+ * Represents a simple Interval Tree. Please note that this interval tree does not balance itself because it is not based e.g. on a Red-Black tree.
  * 
  * @see http://en.wikipedia.org/wiki/Interval_tree
  * @author nastra
