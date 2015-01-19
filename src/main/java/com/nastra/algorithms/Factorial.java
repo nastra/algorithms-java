@@ -6,15 +6,15 @@ package com.nastra.algorithms;
  */
 public class Factorial {
 
-    public static long factorial(int n) {
-        if (n == 0) {
-            return 1;
-        }
-        return n * factorial(n - 1);
-    }
-    
-    public static long numberOfTrailingZeros(int n) {
-    	long result = 0;
+	public static long factorial(int n) {
+		if (n == 0) {
+			return 1;
+		}
+		return n * factorial(n - 1);
+	}
+
+	public static long numberOfTrailingZeros(int n) {
+		long result = 0;
 		long divider = 5;
 		double res = n / divider;
 		result += (long) res;
@@ -25,5 +25,5 @@ public class Factorial {
 		}
 
 		return result;
-    }
+	}
 }
